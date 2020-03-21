@@ -1,9 +1,12 @@
 
 const router = require("express").Router();
 const eventRoutes = require("./events");
+const userRoutes = require("./users");
 
 // API routes
 router.use("/events", eventRoutes);
+
+router.use("/users", userRoutes);
 
 // //if no API routes are hit, send the React app
 // router.use(function(req,res){

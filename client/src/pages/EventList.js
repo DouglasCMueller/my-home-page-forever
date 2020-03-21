@@ -26,6 +26,16 @@ class EventList extends Component {
 
   render() {
     return (
+
+//       <div>
+//   <div class="ui pointing secondary menu">
+//     <a class="active item">Home</a>
+//     <a class="item">Messages</a>
+//     <a class="item">Friends</a>
+//     <div class="right menu"><a class="item">Logout</a></div>
+//   </div>
+//   <div class="ui segment"><img src="/images/wireframe/media-paragraph.png" /></div>
+// </div>
       <List>
       {this.state.events.map(event => (
         <ListItem key={event._id}>
@@ -38,7 +48,8 @@ class EventList extends Component {
         </ListItem>
       ))}
     </List>
-    );
+ 
+    )
   }
 }
 

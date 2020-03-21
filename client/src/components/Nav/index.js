@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Input, Menu } from 'semantic-ui-react'
-import styles from './style.css';
+import { Menu, Segment } from 'semantic-ui-react'
 
-export default class Nav extends Component {
+export default class MenuExampleSecondaryPointing extends Component {
   state = { activeItem: 'home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -11,33 +10,33 @@ export default class Nav extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu secondary>
-        <Menu.Item className='ui homeLink'
-          name='my HomePage'
-          active={activeItem === 'home'}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Item className = 'ui favoritesLink'
-          name='Favorites'
-          active={activeItem === 'messages'}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Item
-          name='friends'
-          active={activeItem === 'friends'}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <Input icon='search' placeholder='Search...' />
-          </Menu.Item>
+      <div>
+        <Menu pointing secondary>
           <Menu.Item
-            name='logout'
-            active={activeItem === 'logout'}
+            name='home'
+            active={activeItem === 'home'}
             onClick={this.handleItemClick}
           />
-        </Menu.Menu>
-      </Menu>
+          <Menu.Item
+            name='messages'
+            active={activeItem === 'messages'}
+            onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            name='friends'
+            active={activeItem === 'friends'}
+            onClick={this.handleItemClick}
+          />
+          <Menu.Menu position='right'>
+            <Menu.Item
+              name='logout'
+              active={activeItem === 'logout'}
+              onClick={this.handleItemClick}
+            />
+          </Menu.Menu>
+        </Menu>
+
+      </div>
     )
   }
 }

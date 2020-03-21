@@ -1,33 +1,59 @@
 import React from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Form, Input, TextArea, Button, Select } from 'semantic-ui-react'
+
+const genderOptions = [
+  { key: 'm', text: 'Male', value: 'male' },
+  { key: 'f', text: 'Female', value: 'female' },
+  { key: 'o', text: 'Other', value: 'other' },
+]
 
 const LoginForm = () => (
-  <Grid textAlign='center' style={{ height: '75vh' }} verticalAlign='middle'>
-    <Grid.Column style={{ maxWidth: 450 }}>
-      <Header as='h2' color='teal' textAlign='center'>
-        <Image src='/logo.png' /> Log-in to your account
-      </Header>
-      <Form size='large'>
-        <Segment stacked>
-          <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' />
-          <Form.Input
-            fluid
-            icon='lock'
-            iconPosition='left'
-            placeholder='Password'
-            type='password'
-          />
-
-          <Button color='teal' fluid size='large'>
-            Login
-          </Button>
-        </Segment>
-      </Form>
-      <Message>
-        New to us? <a href='#'>Sign Up</a>
-      </Message>
-    </Grid.Column>
-  </Grid>
+  <Form>
+    <Form.Group widths='equal'>
+      <Form.Field
+        id='form-input-control-first-name'
+        control={Input}
+        label='First name'
+        placeholder='First name'
+      />
+      <Form.Field
+        id='form-input-control-last-name'
+        control={Input}
+        label='Last name'
+        placeholder='Last name'
+      />
+      <Form.Field
+        control={Select}
+        options={genderOptions}
+        label={{ children: 'Gender', htmlFor: 'form-select-control-gender' }}
+        placeholder='Gender'
+        search
+        searchInput={{ id: 'form-select-control-gender' }}
+      />
+    </Form.Group>
+    <Form.Field
+      id='form-textarea-control-opinion'
+      control={TextArea}
+      label='Opinion'
+      placeholder='Opinion'
+    />
+    <Form.Field
+      id='form-input-control-error-email'
+      control={Input}
+      label='Email'
+      placeholder='joe@schmoe.com'
+      error={{
+        content: 'Please enter a valid email address',
+        pointing: 'below',
+      }}
+    />
+    <Form.Field
+      id='form-button-control-public'
+      control={Button}
+      content='Confirm'
+      label='Label with htmlFor'
+    />
+  </Form>
 )
 
 export default LoginForm
