@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 
 const eventSchema = new Schema({
-    title: {type: String},
-    note: {type: String}
+    title: { type: String, required: true },
+    note: { type: String, required: true }
 })
 const Event = mongoose.model("Event", eventSchema);
 
