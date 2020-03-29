@@ -1,0 +1,151 @@
+/* Home.js page styling */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+ body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    background-color: white;
+    
+}
+
+
+.mainContentContainer{
+color: #379683;
+background-color: white;
+
+}
+.ui.column.grid>[class*="eight wide"].column,
+.ui.grid>.column.row>[class*="eight wide"].column,
+.ui.grid>.row>[class*="eight wide"].column,
+.ui.grid>[class*="eight wide"].column {
+  padding: 0;
+}
+.welcomeContainer{
+      border: 1px solid #379683;
+      margin-left: 15px;
+    margin-top: 20px;
+    width: 95%;
+    height: auto;
+  font-size: 25px;
+  color: #05386B;
+  font-weight: bold;
+  text-align: center;
+  
+}
+ .timeContainer{
+    border-right: 1px solid #379683;
+    border-bottom: 1px solid #379683;
+    border-left: 1px solid #379683;
+    border-top: 0;
+    margin-left: 15px;
+    width: 95%;
+    height: auto;
+    color: #05386B;
+  font-weight: bold;
+  text-align: center;
+}
+.ui.column.grid>[class*="four wide"].column,
+.ui.grid>.column.row>[class*="four wide"].column,
+.ui.grid>.row>[class*="four wide"].column,
+.ui.grid>[class*="four wide"].column{
+    padding: 0;
+}
+.homePageEventsContainer{
+    border: 1px solid #379683;
+margin-top: 20px;
+    width: 100%;
+    height: auto;
+  font-size: 25px;
+  color: #05386B;
+  font-weight: bold;
+  text-align: center;
+}
+
+.homePageEventTitle{
+  height: 40px;
+  font-size: 25px;
+  color: #05386B;
+  font-weight: bold;
+text-align: center;
+  border-bottom: 1px solid #379683;
+}
+
+.eventsPageLink{
+    font-size: 19px;
+    text-decoration: underline;
+}
+.websitesPageLink{
+    font-size: 19px;
+    text-decoration: underline;
+}
+.favoritesContainer{
+    border: 1px solid #379683;
+    margin-top: 20px;
+margin-left: 5px;
+margin-right: 10px;
+    width: 92%;
+    height: auto;
+  font-size: 25px;
+  color: #05386B;
+  font-weight: bold;
+  text-align: center;
+
+}
+.favoritesTitle{
+    height: 40px;
+    font-size: 25px;
+    color: #05386B;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #379683;
+
+}
+
+
+/* WebsiteList.js page styling */
+
+.favoritePageListContainer{
+    border: 5px solid black;
+    margin-left: 15px;
+    margin-top: 15px;
+    width: 250px;
+    height: auto;
+  float:left;
+
+}
+.socialMediaButtonsContainer{
+    font-size: 35px;
+    font-weight: bold;
+    color: #05386B;
+    text-align: center;
+    border-bottom: solid 1px grey;
+}
+.newsButtonsContainer{
+   
+    font-size: 35px;
+    font-weight: bold;
+    color: #05386B;
+    text-align: center;
+    border-bottom: solid 1px grey;
+}
+.addNewSiteButton{
+    color: #05386B;
+    text-align: center;
+
+}
+.financeButtonsContainer{
+    font-size: 35px;
+    font-weight: bold;
+    color: #05386B;
+    text-align: center;
+    border-bottom: solid 1px grey;
+}
+.travelButtonsContainer{
+    font-size: 35px;
+    font-weight: bold;
+    color: #05386B;
+    text-align: center;
+    border-bottom: solid 1px grey;
+}

@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "name": "FaceBook",
+      "url": "https://www.facebook.com",
+      "category": "Social Media",
+      "favorite": false,
+      "clicked": false
+    },
+    {
+      "id": 2,
+      "name": "WhatsApp",
+      "url": "https://www.whatsapp.com",
+      "category": "Social Media",
+      "favorite": false,
+      "clicked": false
+
+    },
+    {
+      "id": 3,
+      "name": "Instagram",
+      "image": "https://www.instagram.com",
+      "category": "Social Media",
+      "favorite": false,
+      "clicked": false
+    },
+    {
+      "id": 4,
+      "name": "Twitter",
+      "image": "https://www.twitter.com",
+      "category": "Social Media",
+      "favorite": false,
+      "clicked": false
+
+
+    }
+    
+  ]
+  

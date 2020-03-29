@@ -1,14 +1,21 @@
 const db = require("../models");
 
-// Defining methods for the eventsController
+// Defining methods for the usersController
 module.exports = {
   findAll: function(req, res) {
     db.User
       .find(req.query)
-     
+  
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByEmail:function(req, res) {
+    db.User
+      .find({email: req.body.email})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
   findById: function(req, res) {
     db.User
       .findById(req.params.id)

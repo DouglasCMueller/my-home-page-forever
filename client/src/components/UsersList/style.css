@@ -1,0 +1,44 @@
+body{
+    background-color: #EDF5E1;
+}
+
+
+.usersTitle{
+    font-size: 60px;
+    color: #05386B;
+    height: 100px;
+    text-align: center;
+    border: solid grey 10px;
+
+  
+
+}
+
+.individualUser{
+    font-size: 30px;
+    color: #05386B;
+
+}
+.eventBox{
+    background-color: #add8e6;
+}
+
+
+
+.eventsTitle{
+
+font-size: 60px;
+    color: #05386B;
+    height: 100px;
+    text-align: center;
+    border: solid grey 10px;
+}
+.list-group{
+    color: #05386B;
+    font-size: 30px;
+    background-color: #8EE4AF;
+
+}
+ul.list-group {
+    color: #05386B;
+}

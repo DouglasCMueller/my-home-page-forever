@@ -1,0 +1,61 @@
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    background-color:white;
+
+}
+.eventPageEventsContainer{
+    background-color: white;
+}
+.eventPageEventsTitle{
+    font-size: 50px;
+    color: #05386B;
+    height: 80px;
+    text-align: center;
+    border: solid grey 5px;
+    background-color: white;
+}
+.addEventButton{
+margin-right: 300px;
+    float: right;
+    padding: 45px;
+    width: 250px;
+
+}
+.eventModalButton{
+    margin-right: 300px;
+    float: right;
+    padding: 19px;
+    width: 250px;
+}
+
+.eventsListShownContainer{
+font-size: 10px;
+border: 1px solid #379683;
+    height: auto;
+  color: #05386B;
+  background-color: white;
+ 
+}
+.eventListEachContainer{
+    font-size: 20px;
+    width: 100%;
+}
+.eventPageIndividualEventsContainer{
+    color: #05386B;
+}
+.eventPageIndividualEventsContainer{
+
+    border: 1px solid #379683;
+}
+.eventListContainerEditButton{
+margin-left: 25px;
+    font-size: 15px;
+}
+.eventListContainerDeleteButton{
+    font-size: 15px;
+}

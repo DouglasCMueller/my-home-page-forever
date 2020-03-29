@@ -1,0 +1,40 @@
+body{
+    background-color: white;
+}
+.websitesTitle{
+    font-size: 50px;
+    color: #05386B;
+    height: 80px;
+    text-align: center;
+    border: solid grey 10px;
+}
+.websiteButtons{
+    font-size: 25px;
+    width: 200px;
+    height:auto;
+}
+.websitesfavoritesContainer{
+    height: auto;
+    border: solid 1px #05386B
+}
+.favoritewebsitesContainerTitle{
+    font-size: 30px;
+    border-bottom: solid 1px #05386B;
+    text-align: center;
+}
+.websitesSocialMediaContainer{
+    margin-top: 5px;
+    border: solid 1px #05386B;
+    height:300px;
+    overflow-y:auto;
+    text-align: center;
+    float: left;
+}
+.websitesSocialMediaContainerTitle{
+font-size: 25px;
+border-bottom: solid 1px #05386B;
+text-align: center;
+}
+
+
+

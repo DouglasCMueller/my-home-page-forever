@@ -1,0 +1,13 @@
+body{
+    background-color: #EDF5E1;
+}
+
+.googleHeadlinesContainer{
+    height: auto;
+}
+.individualHeadlineContainer{
+    border-bottom: 1px solid lightgrey;
+}
+a.headlineLink{
+    color: #5CDB95;
+}

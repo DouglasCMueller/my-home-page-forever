@@ -1,24 +1,20 @@
 import React from 'react'
-import { Container } from 'semantic-ui-react'
-import styles from './style.css'
-require('react-datetime');
-const moment = require('moment');
+import './style.css'
 
+const Header = () => (
 
-const Events = () => (
-
-        <div>
-      
-  <Container className = 'ui eventsContainer'>
-    <p>
-     Events
-
-    </p>
- 
-
-
-  </Container>
+    
+       <div className="ui segment" id="headerContainer">
+         <i className="fas fa-air-freshener" id="iconTitle">    My Morning Refresh</i>
+   <div className="ui pointing secondary menu" id="linksHeader">
+     <a className="item" id="homeLink" href="/home">Home</a>
+     <a className="item" id="websitesLink" href="/websites" >Websites</a>
+     <a className="item" id="eventsLink" href="/events" >Events</a>
+     <a className="item" id="todosLink" href="/todos" >Todos</a>
+     <div className="right menu"><a className="item" id="logoutLink" onClick={()=>localStorage.removeItem("id")} href="/userLogin" >Logout</a></div>
    </div>
+ </div>
+ 
 )
 
-export default Events
+export default Header

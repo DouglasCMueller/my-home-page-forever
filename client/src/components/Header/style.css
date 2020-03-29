@@ -1,4 +1,72 @@
+body{
+  font-family: 'Roboto', sans-serif;
+
+}
 .ui.headerContainer {
-  
+  color: teal;
     font-size: 25px;
+    margin: 0;
    }
+#headerContainer{
+    background-color: #EDF5E1;
+    margin: 0;
+  
+}
+   #iconTitle{
+       font-size: 40px;
+       color: #379683;
+   }
+   #linksHeader {
+     background-color: #EDF5C1;
+    color: #379683;
+    border: 0;
+   }
+   a#homeLink{
+       font-size: 20px;
+       color: #379683;
+       margin-right: 10px;
+       padding: 15px;
+       
+       
+   }
+   a#homeLink:hover {
+    background-color: #add8e6 !important;
+  }
+   a#websitesLink{
+    font-size: 20px;
+    color: #379683;
+    margin-right: 10px;
+    padding: 15px;
+}
+a#websitesLink:hover {
+    background-color: #add8e6 !important;
+  }
+a#eventsLink{
+    font-size: 20px;
+    color: #379683;
+    margin-right: 10px;
+    padding: 15px;
+}
+a#eventsLink:hover {
+    background-color: #add8e6 !important;
+  }
+  a#todosLink{
+    font-size: 20px;
+    color: #379683;
+    margin-right: 10px;
+    padding: 15px;
+    
+}
+a#todosLink:hover {
+ background-color: #add8e6 !important;
+}
+
+a#logoutLink{
+    font-size: 20px;
+    color: #379683;
+    margin-right: 10px;
+    padding: 15px;
+}
+a#logoutLink:hover {
+    background-color: #add8e6 !important;
+  }

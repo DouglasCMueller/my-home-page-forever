@@ -1,0 +1,72 @@
+body{
+    background-color: #EDF5E1;
+}
+.loginFormTitle{
+    font-size: 25px;
+    text-align: center;
+    padding: 15px;
+    color: #05386B;
+    font-weight: bolder;
+}
+ 
+
+p{
+    margin:0px;
+  margin-left: 25px;
+    color: #05386B;
+    font-size: 25px;
+    padding: 0px;
+
+}
+input{
+    margin-left: 25px;
+    width: 90%;
+    border: 2px solid grey;
+    color: #05386B;
+ font-size: 35px;
+  
+}
+form{
+    border: 6px solid #379683;
+}
+.submitButtonContainer{
+    padding: 15px;
+}
+button{
+    margin-left: 10px;
+    color: #05386B;
+    font-size: 25px;
+    padding: 5px;
+}
+input[type=text]{
+    font-size: 25px;
+    height: 35px;
+}
+input[type=text]:not(textarea){
+    height: 55px;
+}
+
+input[type=password]:not(textarea){
+    height: 55px;
+}
+.newUserButton{
+
+    float: right;
+    margin-right: 20px;    
+}
+
+#newUserButtons{
+    font-size: 30px;
+    height: 50px;
+    width: 150px;
+    float: right;
+    margin-right: 20px; 
+background-color: lightgray;
+color: #05386B;
+    border: solid 1px black;
+    text-align: center;
+    margin-bottom: 15px;
+}
+a.newUserLink{
+    color: #05386B
+}
