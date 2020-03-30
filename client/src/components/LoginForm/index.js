@@ -52,7 +52,7 @@ class LoginForm extends Component {
   render() {
     return (
       <div className= "formContainer">
-        <div class="loginFormTitle">User Login Form</div>
+        <div className="loginFormTitle">User Login Form</div>
       <form>
     
         <p>Email:</p>
@@ -71,11 +71,11 @@ class LoginForm extends Component {
           value={this.state.password}
           onChange={this.handleInputChange}
         />
-        <div class="submitButtonContainer">
+        <div className="submitButtonContainer">
         <button onClick={this.handleFormSubmit}>Submit</button>
     
         <div  id="newUserButtons">
-          <a  class="newUserLink" href="/newUser">New User</a>
+          <a  className="newUserLink" href="/newUser">New User</a>
           </div>
         
         </div>

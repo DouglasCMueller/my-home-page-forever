@@ -8,7 +8,10 @@ body{
     color: #05386B;
     font-weight: bolder;
 }
- 
+.formContainer{
+width: 100%;
+
+}
 
 p{
     margin:0px;
@@ -28,6 +31,7 @@ input{
 }
 form{
     border: 6px solid #379683;
+    width: 500px;
 }
 .submitButtonContainer{
     padding: 15px;

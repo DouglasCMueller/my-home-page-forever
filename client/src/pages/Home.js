@@ -9,7 +9,7 @@ import { Grid, } from 'semantic-ui-react'
 import API from "../utils/API";
 import "../App.css"
 
-let id = localStorage.getItem("id")
+let userId = localStorage.getItem("id")
 
 class Home extends Component {
   state = {
@@ -31,7 +31,7 @@ class Home extends Component {
     this.loadUserDetails();
   }
   loadUserDetails = () => {
-    API.getUser(id)
+    API.getUserById(userId)
       .then(res => {
 
         this.setState({
@@ -56,7 +56,7 @@ class Home extends Component {
         <Header />
         <div className="mainContentContainer">
         <Grid>
-          <Grid.Column width={4}>
+          <Grid.Column width={3}>
             <div className="welcomeContainer"><i className="fas fa-sun"></i> Good Morning, {this.state.fname}
        
             </div>
@@ -66,40 +66,61 @@ class Home extends Component {
               <Timer />
         
             </div>
-            <div className="timeContainer">
-           <strong>Weather in: {this.state.locationcity},{this.state.locationstate}</strong>
+            <div className="weatherContainer">
+          Weather in: {this.state.locationcity},{this.state.locationstate}
               <WeatherShown />
             </div>
-            <div className="timeContainer">
-            <strong>Stock Market</strong>
+            <div className="stockMarketContainer">
+         Stock Market
        <StockQuoteShown />
-        
-            </div>
-            <div className="timeContainer">
    
+            </div>
+           
+          </Grid.Column>
+
+          <Grid.Column width={3}>
+          <div className="headlineContainer"><i class="far fa-newspaper"></i> Current Headlines</div>
+   <div>
               <GoogleNews />
+            
             </div>
           </Grid.Column>
-          <Grid.Column width={8}>
-            <div className="homePageEventsContainer">
+
+
+
+          <Grid.Column width={6}>
+      
+
               <div className="homePageEventTitle"><i className="far fa-calendar-alt"></i> Events List</div>
-              <a className="eventsPageLink" href="/events">Click to add/edit event</a>
+            <div className="eventsPageLinkContainer"> <a className="eventsPageLink" href="/events">Click to add/edit event</a>
+          </div>
+          
+              <div className="homePageEventsContainer">
               {this.state.events.map(event => (
-           
-            <div key={event.title}>
-              
-              Date: {event.date} | Title: {event.title} | Note: {event.note}
-            </div>
+         
+         <div className="homePageEventsListContainer" key={event.title}>
+         <p className="homePageEventListEachContainer"><strong>Date:     </strong>{event.date}</p>
+         <p className="homePageEventListEachContainer"><strong>Time:     </strong>{event.time}</p>
+         <p className="homePageEventListEachContainer"><strong>Title:     </strong>{event.title}</p>
+         <p className="homePageEventListEachContainer"><strong>Note:     </strong>{event.note}</p>
+         
+       </div>
           ))}
             </div>
-            <div className="homePageEventsContainer">
-              <div className="homePageEventTitle"><i className="fab fa-elementor"></i> Todos List</div>
-              <a className="eventsPageLink" href="/todos">Click to add/edit todo</a>
-              {this.state.events.map(todo => (
+
+    
+              <div className="homePageTodoTitle"><i className="fab fa-elementor"></i> Todos List</div>
+              <div className="todosPageLinkContainer"> <a className="todosPageLink" href="/todos">Click to add/edit todo</a>
+              </div>
+
+              <div className="homePageTodosContainer">
+              {this.state.todos.map(todo => (
+                
+           <div className="homePageTodosListContainer" key={todo.title}>
+           <p className="homePageTodoListEachContainer"><strong>Title:     </strong>{todo.title}</p>
+           <p className="homePageTodoListEachContainer"><strong>Note:     </strong>{todo.note}</p>
            
-            <div key={todo.title}>
-            Title: {todo.title} | Note: {todo.note}
-            </div>
+         </div>
           ))}
             </div>
 

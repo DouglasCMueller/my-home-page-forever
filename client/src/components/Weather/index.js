@@ -3,7 +3,7 @@ import axios from 'axios';
 import API from "../../utils/API";
 import './style.css'
 
-let id = window.localStorage.getItem("id")
+let userId = window.localStorage.getItem("id")
 
 let locationcityApi = "";
 let locationstateApi = "";
@@ -22,7 +22,7 @@ export default class DateShown extends React.Component {
         this.loadUserDetails();
     }
     loadUserDetails = () => {
-        API.getUser(id)
+        API.getUserById(userId)
             .then(res => {
 
                 this.setState({

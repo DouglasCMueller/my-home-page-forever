@@ -30,7 +30,7 @@ export default class GoogleNews extends React.Component {
 
     render() {
         return (
-            <div className="googleHeadlinesContainer"><strong>Headlines</strong>
+            <div className="googleHeadlinesContainer">
             {this.state.headlines.map(headline => (
              <div className="individualHeadlineContainer" key={headline.title}>
    

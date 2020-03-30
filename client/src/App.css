@@ -23,29 +23,47 @@ background-color: white;
   padding: 0;
 }
 .welcomeContainer{
-      border: 1px solid #379683;
-      margin-left: 15px;
-    margin-top: 20px;
+  
+margin-left: 10px;
     width: 95%;
     height: auto;
-  font-size: 25px;
-  color: #05386B;
+  font-size: 30px;
+  color: #c7ea46;
   font-weight: bold;
   text-align: center;
   
 }
  .timeContainer{
-    border-right: 1px solid #379683;
-    border-bottom: 1px solid #379683;
-    border-left: 1px solid #379683;
-    border-top: 0;
+   font-size: 30px;
     margin-left: 15px;
     width: 95%;
     height: auto;
-    color: #05386B;
-  font-weight: bold;
+    color: #00a86b;
+  
   text-align: center;
+  
 }
+.weatherContainer{
+ color: #00a86b;
+ text-align: center;
+ font-size: 25px;
+
+}
+.stockMarketContainer{
+  color: #00a86b;
+  text-align: center;
+  font-size: 25px;
+
+}
+
+
+.headlineContainer{
+font-weight: bolder;
+font-size: 25px;
+text-align: center;
+}
+
+
 .ui.column.grid>[class*="four wide"].column,
 .ui.grid>.column.row>[class*="four wide"].column,
 .ui.grid>.row>[class*="four wide"].column,
@@ -53,29 +71,96 @@ background-color: white;
     padding: 0;
 }
 .homePageEventsContainer{
-    border: 1px solid #379683;
-margin-top: 20px;
+
+
     width: 100%;
-    height: auto;
-  font-size: 25px;
-  color: #05386B;
-  font-weight: bold;
-  text-align: center;
+    height: 250px;
+    font-weight: bolder;
+    font-size: 20px;
+  
+    overflow-y:auto
 }
 
 .homePageEventTitle{
   height: 40px;
   font-size: 25px;
-  color: #05386B;
+  color: #379683;
   font-weight: bold;
 text-align: center;
-  border-bottom: 1px solid #379683;
+
+}
+.homePageEventsListContainer
+{
+margin: 0;
+border: 0;
+}
+.homePageEventsListContainer{
+  font-size: 15px;
+  color: #379683;
+  margin: 10px;
+  padding: 0;
+  border-bottom: solid 1px #379683;
+}
+.homePageEventListEachContainer{
+  font-size: 15px;
+  color: #379683;
+  margin: 0;
 }
 
+.eventsPageLinkContainer{
+  text-align: center;
+}
 .eventsPageLink{
     font-size: 19px;
     text-decoration: underline;
+    display: block; 
 }
+
+
+
+
+.homePageTodosContainer{
+  width: 100%;
+  height: 250px;
+  font-weight: bolder;
+  font-size: 20px;
+  overflow-y:auto
+}
+
+.homePageTodoTitle{
+height: 40px;
+font-size: 25px;
+color: #379683;
+font-weight: bold;
+text-align: center;
+}
+.homePageTodosListContainer
+{
+border-bottom: solid 1px #379683;
+}
+.homePageTodosListContainer{
+font-size: 15px;
+color: #379683;
+margin: 10px;
+padding: 0;
+}
+.homePageTodoListEachContainer{
+font-size: 15px;
+color: #379683;
+margin: 0;
+}
+
+.todosPageLinkContainer{
+text-align: center;
+}
+.todosPageLink{
+  font-size: 19px;
+  text-decoration: underline;
+  display: block; 
+}
+
+
+
 .websitesPageLink{
     font-size: 19px;
     text-decoration: underline;

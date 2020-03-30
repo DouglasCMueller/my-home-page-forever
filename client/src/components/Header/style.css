@@ -15,17 +15,19 @@ body{
    #iconTitle{
        font-size: 40px;
        color: #379683;
+       background-color: #EDF5E1;
    }
    #linksHeader {
      background-color: #EDF5C1;
     color: #379683;
     border: 0;
+    padding: 0;
    }
    a#homeLink{
        font-size: 20px;
        color: #379683;
        margin-right: 10px;
-       padding: 15px;
+       padding: 20px;
        
        
    }
@@ -36,7 +38,7 @@ body{
     font-size: 20px;
     color: #379683;
     margin-right: 10px;
-    padding: 15px;
+    padding: 20px;
 }
 a#websitesLink:hover {
     background-color: #add8e6 !important;
@@ -45,7 +47,7 @@ a#eventsLink{
     font-size: 20px;
     color: #379683;
     margin-right: 10px;
-    padding: 15px;
+    padding: 20px;
 }
 a#eventsLink:hover {
     background-color: #add8e6 !important;
@@ -54,7 +56,7 @@ a#eventsLink:hover {
     font-size: 20px;
     color: #379683;
     margin-right: 10px;
-    padding: 15px;
+    padding: 20px;
     
 }
 a#todosLink:hover {
@@ -64,8 +66,9 @@ a#todosLink:hover {
 a#logoutLink{
     font-size: 20px;
     color: #379683;
-    margin-right: 10px;
-    padding: 15px;
+   
+    padding: 20px;
+    background-color: #EDF5C1;
 }
 a#logoutLink:hover {
     background-color: #add8e6 !important;

@@ -9,7 +9,8 @@ import NewUser from "./pages/NewUser";
 import UserList from "./pages/UserList";
 import WebsiteList from "./pages/WebsiteList";
 import "./App.css"
-
+Text.defaultProps = Text.defaultProps || {}
+Text.defaultProps.style =  { fontFamily: 'Roboto' }
 function App() {
   return (
     <Router>

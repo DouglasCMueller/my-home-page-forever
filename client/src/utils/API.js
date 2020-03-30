@@ -26,7 +26,7 @@ export default {
         return axios.get("/api/users");
   },
   // gets user with the given id
-  getUser: function(id) {
+  getUserById: function(id) {
     return axios.get("/api/users/" + id);
   },
   // gets user by email
@@ -50,18 +50,22 @@ export default {
 // axios routes for Websites
 
   getWebsites: function() {
-    // Gets all events
+    // Gets all websites
     return axios.get("/api/websites");
   },
-  // gets event with the given id
-  getWebsite: function(id) {
+  // gets website with the given id
+  getWebsiteById: function(id) {
     return axios.get("/api/websites/" + id);
   },
-   // Deletes an event to the database
+  // gets website with the given url
+  getWebsiteByName: function(name) {
+    return axios.get("/api/websites/" + name);
+  },
+   // Deletes a website to the database
    deleteWebsite: function(id) {
     return axios.delete("/api/websites/" + id);
   },
-  // Saves an event to the database
+  // Saves a website to the database
   saveWebsite: function(eventData) {
     return axios.post("/api/websites", eventData);
   },

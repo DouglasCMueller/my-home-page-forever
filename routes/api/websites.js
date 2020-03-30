@@ -18,6 +18,13 @@ router
   .put(websitesController.update)
   .delete(websitesController.remove);
 
+// Matches with "/api/websites/:name"
+router
+  .route("/:name")
+  .get(websitesController.findByName)
+  .put(websitesController.update)
+  .delete(websitesController.remove);
+
 
 
 module.exports = router;

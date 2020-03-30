@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import './style.css'
 
 console.log(window.localStorage.getItem("id"))
-let id = window.localStorage.getItem("id");
+let userId = window.localStorage.getItem("id");
 function addEventModal() {
   alert("button clicked")
   
@@ -22,7 +22,7 @@ class TodosList extends Component {
   }
 
   loadUserTodos = () => {
-    API.getUser(id)
+    API.getUserById(userId)
       .then(res => {
         console.log(res)
         this.setState({
