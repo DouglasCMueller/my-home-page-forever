@@ -15,9 +15,8 @@ router.route("/login")
 router
   .route("/:id")
   .get(usersController.findById)
-  .put(usersController.update)
+  .put(usersController.updateUserWebsite)
   .delete(usersController.remove);
- 
 
 
 

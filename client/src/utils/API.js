@@ -42,10 +42,27 @@ export default {
     return axios.post("/api/users", userData);
   },
   // Updates a user to the database
-  updateUser: function(id) {
-    return axios.put("/api/users/", id);
+  updateUserWebsite: function(id, userdata) {
+    return axios.put("/api/users/" + id, userdata);
   },
-
+  
+// axios routes for todos
+getTodos: function() {
+  // Gets all todos
+  return axios.get("/api/todos");
+},
+// gets todo with the given id
+getTodo: function(id) {
+  return axios.get("/api/todos/" + id);
+},
+ // Deletes an event to the database
+ deleteTodo: function(id) {
+  return axios.delete("/api/todos/" + id);
+},
+// Saves an event to the database
+saveTodo: function(eventData) {
+  return axios.post("/api/todos", eventData);
+},
 
 // axios routes for Websites
 

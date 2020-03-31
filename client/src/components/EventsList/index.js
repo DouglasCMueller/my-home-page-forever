@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import ModalEvent from '../ModalEvent/'
 import { Grid, } from 'semantic-ui-react'
 import './style.css'
 
@@ -16,9 +15,7 @@ class EventsList extends Component {
   };
 
   componentDidMount() {
-
     this.loadUserEvents();
-
   }
 
   loadUserEvents = () => {
@@ -29,22 +26,18 @@ class EventsList extends Component {
           events: res.data.event,
           fname: res.data.fname
         })
-
       })
       .catch(err => console.log(err));
   };
 
   render() {
-
     return (
       <>
         <Grid>
           <Grid.Column width={10}>
             <div className="eventPageEventsContainer">
               <div className="eventPageEventsTitle"><i class="fab fa-elementor"></i> Events List
-
           </div>
-
               <div className="eventPageIndividualEventsContainer">
                 {this.state.events.map(event => (
 
@@ -60,15 +53,17 @@ class EventsList extends Component {
                 ))}
               </div>
             </div>
+
             <div>
 
             </div>
           </Grid.Column>
+          
           <Grid.Column width={6}>
-            <div className="newEventTitle">New Event</div>
+            <div className="newEventTitle"><i class="fab fa-elementor"></i>    New Event</div>
             <div className="newEventContainer">
               <div className="newEventDataTitle">Date:</div>
-              <input className="newEventDateInput" id="newEventDateInputId" type="text" placeholder="01/012020"></input>
+              <input className="newEventDateInput" id="newEventDateInputId" type="text" placeholder="01/01/2020"></input>
               <div className="newEventDataTitle">Time:</div>
               <input className="newEventTimeInput" id="newEventTimeInputId" type="text" placeholder="12 pm"></input>
               <div className="newEventDataTitle">Title:</div>

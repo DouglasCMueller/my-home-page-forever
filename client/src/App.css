@@ -7,14 +7,10 @@
     font-family: 'Roboto', sans-serif;
     line-height: 1.4;
     background-color: white;
-    
-}
-
-
+    }
 .mainContentContainer{
 color: #379683;
 background-color: white;
-
 }
 .ui.column.grid>[class*="eight wide"].column,
 .ui.grid>.column.row>[class*="eight wide"].column,
@@ -22,69 +18,66 @@ background-color: white;
 .ui.grid>[class*="eight wide"].column {
   padding: 0;
 }
+.videoPlayer{
+  height: 500px;
+}
+/* home page welcome container styling */
+
 .welcomeContainer{
-  
-margin-left: 10px;
+  margin-left: 10px;
     width: 95%;
     height: auto;
   font-size: 30px;
-  color: #c7ea46;
+  color: #2e8b57;
   font-weight: bold;
   text-align: center;
-  
-}
+  }
  .timeContainer{
    font-size: 30px;
     margin-left: 15px;
     width: 95%;
     height: auto;
     color: #00a86b;
-  
-  text-align: center;
-  
-}
+    text-align: center;
+  }
 .weatherContainer{
  color: #00a86b;
  text-align: center;
  font-size: 25px;
-
 }
 .stockMarketContainer{
   color: #00a86b;
   text-align: center;
   font-size: 25px;
-
 }
-
-
 .headlineContainer{
+  color: #2e8b57;
 font-weight: bolder;
 font-size: 25px;
 text-align: center;
 }
-
-
 .ui.column.grid>[class*="four wide"].column,
 .ui.grid>.column.row>[class*="four wide"].column,
 .ui.grid>.row>[class*="four wide"].column,
 .ui.grid>[class*="four wide"].column{
     padding: 0;
 }
+.reactPlayerContainer{
+  margin-left: 15px;
+}
+/* home page events styling */
 .homePageEventsContainer{
-
-
     width: 100%;
     height: 250px;
     font-weight: bolder;
     font-size: 20px;
-  
-    overflow-y:auto
+      overflow-y:auto
 }
 
 .homePageEventTitle{
   height: 40px;
   font-size: 25px;
-  color: #379683;
+  color: #2e8b57;
   font-weight: bold;
 text-align: center;
 
@@ -115,10 +108,7 @@ border: 0;
     text-decoration: underline;
     display: block; 
 }
-
-
-
-
+/* home page todos styling */
 .homePageTodosContainer{
   width: 100%;
   height: 250px;
@@ -126,11 +116,10 @@ border: 0;
   font-size: 20px;
   overflow-y:auto
 }
-
 .homePageTodoTitle{
 height: 40px;
 font-size: 25px;
-color: #379683;
+color: #2e8b57;
 font-weight: bold;
 text-align: center;
 }
@@ -149,7 +138,6 @@ font-size: 15px;
 color: #379683;
 margin: 0;
 }
-
 .todosPageLinkContainer{
 text-align: center;
 }
@@ -159,78 +147,51 @@ text-align: center;
   display: block; 
 }
 
+/* home page websites styling */
 
+.homePageWebsiteTitle{
+height: 40px;
+font-size: 25px;
+color: #2e8b57;
+font-weight: bold;
+text-align: center;
 
-.websitesPageLink{
+}
+.websitesPageLinkContainer{
+  text-align: center;
+  }
+  .websitesPageLink{
     font-size: 19px;
     text-decoration: underline;
+    display: block; 
+  }
+.homePageWebsitesContainer{
+margin: 0;
+border: 0;
+text-align: center;
+height: 700px;
+
+margin-right: 22px;
+margin-left: 20px;
+overflow-y:auto;
 }
-.favoritesContainer{
-    border: 1px solid #379683;
-    margin-top: 20px;
-margin-left: 5px;
-margin-right: 10px;
-    width: 92%;
-    height: auto;
-  font-size: 25px;
-  color: #05386B;
-  font-weight: bold;
+
+.homePageUserFavoriteWebsiteButton{
+  background-color: #379683;
+  border: none;
+  color: white;
+  padding: 10px;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 2px 4px;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 220px;
+}
+a:hover{
+  color: #c7ea46;
+}
 
-}
-.favoritesTitle{
-    height: 40px;
-    font-size: 25px;
-    color: #05386B;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: 1px solid #379683;
 
-}
-
-
-/* WebsiteList.js page styling */
-
-.favoritePageListContainer{
-    border: 5px solid black;
-    margin-left: 15px;
-    margin-top: 15px;
-    width: 250px;
-    height: auto;
-  float:left;
-
-}
-.socialMediaButtonsContainer{
-    font-size: 35px;
-    font-weight: bold;
-    color: #05386B;
-    text-align: center;
-    border-bottom: solid 1px grey;
-}
-.newsButtonsContainer{
-   
-    font-size: 35px;
-    font-weight: bold;
-    color: #05386B;
-    text-align: center;
-    border-bottom: solid 1px grey;
-}
-.addNewSiteButton{
-    color: #05386B;
-    text-align: center;
-
-}
-.financeButtonsContainer{
-    font-size: 35px;
-    font-weight: bold;
-    color: #05386B;
-    text-align: center;
-    border-bottom: solid 1px grey;
-}
-.travelButtonsContainer{
-    font-size: 35px;
-    font-weight: bold;
-    color: #05386B;
-    text-align: center;
-    border-bottom: solid 1px grey;
-}

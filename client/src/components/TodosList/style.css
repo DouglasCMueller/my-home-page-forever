@@ -1,44 +1,129 @@
-body{
-    background-color: #EDF5E1;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+ body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    background-color: white;
+    
 }
 
+.ui.grid>.column:not(.row), .ui.grid>.row>.column {
+    position: relative;
+    display: inline-block;
+    width: 6.25%;
+padding: 0;
+    vertical-align: top;
+}
+.todoPageTodosContainer{
+    background-color: white;
+}
 .todoPageTodosTitle{
     font-size: 50px;
-    color: #05386B;
+    color: #444C38;
     height: 80px;
     text-align: center;
-    border: solid grey 10px;
+ 
+    background-color: white;
 }
-
 .addTodoButton{
+margin-right: 300px;
+    float: right;
+    padding: 45px;
+    width: 250px;
+
+}
+.todoModalButton{
     margin-right: 300px;
-        float: right;
-        padding: 14px;
-        width: 250px;
-    
-    }
+    float: right;
+    padding: 19px;
+    width: 250px;
+}
 
 .todosListShownContainer{
 font-size: 10px;
-border: 1px solid #379683;
     height: auto;
-  color: #05386B;
+  color: #4F7942;
+  background-color: white;
+   margin-bottom: 10px;
+   margin-left: 80px;
 }
 .todoListEachContainer{
     font-size: 20px;
-    width: 100%;
-}
-.todoPageIndividualTodosContainer{
-    color: #05386B;
-}
-.todoPageIndividualTodosContainer{
+    width: 80%;
+    color: #4F7942;
 
-    border: 1px solid #379683;
 }
+.todoPageIndividualEventsContainer{
+    color: #4F7942;
+}
+
 .todoListContainerEditButton{
-    margin-left: 25px;
-        font-size: 15px;
+margin-left: 25px;
+    font-size: 15px;
+    color: #444c38;
+    background-color: #edf5e1;
+    margin-bottom: 5px;
+}
+.todoListContainerDeleteButton{
+    font-size: 15px;
+    color: #444c38;
+    background-color: #edf5e1;
+}
+
+
+
+    .newTodoTitle{
+        font-size: 30px;
+        color: #444C38;
+        height: 80px;
+        text-align: center;
+      padding:30px;
+     margin-right: 60px;
+        background-color: white;
+        font-weight: bolder;
+          }
+    .newTodoContainer{
+    margin-right: 75px;
+    border: solid 1px;
     }
-    .todoListContainerDeleteButton{
-        font-size: 15px;
+    .newTodoDataTitle{
+        font-size: 20px;
+        color: #4cbb17;
+        border-left: 0;
+        margin-left: 23px;
+    font-weight: bolder;
+        }
+    #newTodoDateInputId{
+        font-size: 20px;
+        color: #0b6623;
+    border: 1px solid #4F7942;
+    }
+    #newTodoTimeInputId{
+    font-size: 20px;
+        border: 1px solid #4F7942;
+    }
+    #newTodoTitleInputId{
+        font-size: 20px;
+        border: 1px solid #4F7942;
+        }
+    .newTodoNoteInput{
+ 
+        border: 0;
+    }
+    #newTodoNoteTextAreaId{
+        font-size: 20px;
+             margin-left: 25px;
+        height: 100px;
+        width: 448px;
+        border: 1px solid #4F7942;
+    }
+    .newTodoSubmitButton{
+        font-size: 25px;
+        color: #444c38;
+        background-color: #edf5e1;
+      margin: 5px;
+     margin-left: 25px;
+    
     }

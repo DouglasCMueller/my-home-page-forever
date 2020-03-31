@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-
 import './style.css'
 
 class UsersList extends Component {
@@ -36,14 +35,9 @@ class UsersList extends Component {
         {this.state.users.map(user => (
           <div>
             key={user._id}>
-
-              First Name: {user.fname} | Last Name: {user.lname} | event: {user.event[0]} | userid: {user._id}}
-
+            First Name: {user.fname} | Last Name: {user.lname} | event: {user.event[0]} | userid: {user._id}}
           </div>
-
         ))}
-
-
       </>
     )
   }

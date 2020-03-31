@@ -48,7 +48,6 @@ class LoginForm extends Component {
     this.setState({ email: "", password: "" });
   };
 
-
   render() {
     return (
       <div className= "formContainer">

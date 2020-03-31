@@ -1,40 +1,126 @@
 body{
     background-color: white;
 }
+
 .websitesTitle{
     font-size: 50px;
-    color: #05386B;
-    height: 80px;
+    color: #444C38;
+    height: 70px;
     text-align: center;
-    border: solid grey 10px;
+     background-color: white;
 }
-.websiteButtons{
-    font-size: 25px;
-    width: 200px;
-    height:auto;
+.websiteButton{
+    background-color: #379683;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 2px 4px;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 150px;
 }
-.websitesfavoritesContainer{
-    height: auto;
-    border: solid 1px #05386B
-}
-.favoritewebsitesContainerTitle{
+.websiteButton:hover{
+    color: #c7ea46;
+  }
+
+.favoriteWebsitesContainerTitle{
     font-size: 30px;
-    border-bottom: solid 1px #05386B;
+    color: #444C38;
+    height: 40px;
     text-align: center;
+     background-color: white;
 }
-.websitesSocialMediaContainer{
-    margin-top: 5px;
-    border: solid 1px #05386B;
-    height:300px;
-    overflow-y:auto;
+.favoriteWebsitesContainerTitleB{
+    font-size: 20px;
+    color: #444C38;
+    height: 30px;
+    text-align: center;
+     background-color: white;
+
+}
+.websitesFavoritesButtonsContainer{
+    height: 120px;
+    margin-left: 20px;
+    overflow-y: scroll
+}
+.websitesFavoritesButtonsContainerB{
+    margin-left: 20px;
+height: auto;
+}
+
+/*all websites portion styling */
+.categoryContainer{
+    margin-left: 20px;
+    width: 180px;
+    height: 300px;
     text-align: center;
     float: left;
+
 }
-.websitesSocialMediaContainerTitle{
-font-size: 25px;
-border-bottom: solid 1px #05386B;
-text-align: center;
+.individualCategoryContainer{
+   height: 275px;
+   overflow-y: scroll;
+
+}
+.categoryContainerTitle{
+    font-size: 20px;
+    color: #444C38;
+    height: 20px;
+    text-align: center;
+     background-color: white;
+     margin: 5px;
 }
 
-
-
+/* new event container styling */
+.newWebsiteTitle{
+    font-size: 30px;
+    color: #444C38;
+    height: 80px;
+    text-align: center;
+  padding:30px;
+ margin-right: 60px;
+    background-color: white;
+    font-weight: bolder;
+  }
+  .newWebsiteContainer{
+    margin-right: 75px;
+    border: solid 1px;
+    }
+    .newWebsiteDataTitle{
+        font-size: 20px;
+        color: #4cbb17;
+        border-left: 0;
+        margin-left: 23px;
+    font-weight: bolder;
+    
+    }
+    #newWebsiteNameInputId{
+        font-size: 20px;
+        color: #0b6623;
+    border: 1px solid #4F7942;
+    }
+    #newWebsiteUrlInputId{
+        font-size: 20px;
+        color: #0b6623;
+    border: 1px solid #4F7942;
+    }
+    #newWebsiteCategoryInputId{
+        font-size: 20px;
+        color: #0b6623;
+    border: 1px solid #4F7942;
+    width: 357px;
+    margin-left: 25px;
+    height: 55px;
+    }
+    .newWebsiteSubmitButton{
+        font-size: 25px;
+        color: #444c38;
+        background-color: #edf5e1;
+      margin: 5px;
+     margin-left: 25px;
+    
+    }

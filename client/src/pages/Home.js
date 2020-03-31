@@ -1,11 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Link } from "react";
 import Header from "../components/Header/index"
 import DateShown from "../components/DateShown"
 import Timer from "../components/Timer"
 import WeatherShown from "../components/Weather"
 import GoogleNews from "../components/GoogleNews"
 import StockQuoteShown from "../components/AlphaAdvantageStockQuotes"
-import { Grid, } from 'semantic-ui-react'
+import ReactPlayer from 'react-player'
+import WebsiteButton from "../components/WebsiteButton"
+
+import { Grid } from 'semantic-ui-react'
 import API from "../utils/API";
 import "../App.css"
 
@@ -23,7 +26,7 @@ class Home extends Component {
     password: "",
     events: [],
     todos: [],
-    favoritewebsites: []
+    userfavoritewebsites: []
   
   };
 
@@ -41,7 +44,7 @@ class Home extends Component {
           email: res.data.email,
           events: res.data.event,
           todos: res.data.todo,
-          favorites: res.data.favorite,
+          userfavoritewebsites: res.data.favoritewebsite,
           locationcity: res.data.locationcity,
           locationstate: res.data.locationstate
    
@@ -53,12 +56,12 @@ class Home extends Component {
   render() {
     return (
       <>
-        <Header />
+          <Header />
         <div className="mainContentContainer">
         <Grid>
           <Grid.Column width={3}>
             <div className="welcomeContainer"><i className="fas fa-sun"></i> Good Morning, {this.state.fname}
-       
+ 
             </div>
             <div className="timeContainer">
               <DateShown />
@@ -75,27 +78,25 @@ class Home extends Component {
        <StockQuoteShown />
    
             </div>
+            <div className="reactPlayerContainer">
+            {/* <ReactPlayer width="265px" height="300px" url='https://www.youtube.com/watch?v=8tB7XOE9esE' playing /> */}
+            </div>
            
           </Grid.Column>
 
           <Grid.Column width={3}>
-          <div className="headlineContainer"><i class="far fa-newspaper"></i> Current Headlines</div>
+          <div className="headlineContainer"><i className="far fa-newspaper"></i> Current Headlines</div>
    <div>
               <GoogleNews />
             
             </div>
           </Grid.Column>
-
-
-
           <Grid.Column width={6}>
       
-
               <div className="homePageEventTitle"><i className="far fa-calendar-alt"></i> Events List</div>
-            <div className="eventsPageLinkContainer"> <a className="eventsPageLink" href="/events">Click to add/edit event</a>
+            <div className="eventsPageLinkContainer"> <a className="eventsPageLink" href="/events">Click here to add/edit events</a>
           </div>
-          
-              <div className="homePageEventsContainer">
+               <div className="homePageEventsContainer">
               {this.state.events.map(event => (
          
          <div className="homePageEventsListContainer" key={event.title}>
@@ -110,12 +111,12 @@ class Home extends Component {
 
     
               <div className="homePageTodoTitle"><i className="fab fa-elementor"></i> Todos List</div>
-              <div className="todosPageLinkContainer"> <a className="todosPageLink" href="/todos">Click to add/edit todo</a>
+              <div className="todosPageLinkContainer"> <a className="todosPageLink" href="/todos">Click here to add/edit todos</a>
               </div>
 
               <div className="homePageTodosContainer">
               {this.state.todos.map(todo => (
-                
+
            <div className="homePageTodosListContainer" key={todo.title}>
            <p className="homePageTodoListEachContainer"><strong>Title:     </strong>{todo.title}</p>
            <p className="homePageTodoListEachContainer"><strong>Note:     </strong>{todo.note}</p>
@@ -126,11 +127,26 @@ class Home extends Component {
 
           </Grid.Column>
           <Grid.Column width={4}>
-          <div className="favoritesContainer">
-              <div className="favoritesTitle"><i className="fab fa-chrome"></i> Favorite Websites</div>
-              <a className="websitesPageLink" href="/websites">Click to add/edit websites</a>
-         <div>test</div>
-            </div>
+          <div className="homePageWebsiteTitle"><i className="fab fa-chrome"></i> Favorite Websites</div>
+            <div className="websitesPageLinkContainer"> <a className="websitesPageLink" href="/websites">Click here to add/edit favorite websites</a>
+          </div>
+
+          <div className="homePageWebsitesContainer">
+          {this.state.userfavoritewebsites.map(userfavoritewebsite => (
+                                <a className="homePageUserFavoriteWebsiteButton"
+                                        key={userfavoritewebsite._id}
+                                        href={'//' + userfavoritewebsite.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer" 
+                                        id={userfavoritewebsite._id}
+                                        name={userfavoritewebsite.name}
+                                        url={userfavoritewebsite.url}
+                                        category={userfavoritewebsite.category}
+                                        favorite={userfavoritewebsite.favorite}
+                                        >{userfavoritewebsite.name}</a>
+                                                                        ))}
+</div>
+           
           </Grid.Column>
         </Grid>
         </div>
