@@ -24,3 +24,29 @@
     color: #4f7942;
 
 }
+input[type=text] {
+    font-size: 15px;
+
+}
+.stockSymbolInput{
+    margin: 0;
+    width: 135px;
+    height: 35px;
+    font-size: 5px;
+    
+    text-align: center;
+    color: #4f7942;
+}
+input {
+    margin-left: 15px;
+    width: 90%;
+    border: 2px solid #4f7942;
+    color:#4f7942;
+    font-size: 35px;
+}
+::placeholder {
+    color: #4f7942;
+    font-size: 20px;
+    opacity: 1; /* Firefox */
+  }
+

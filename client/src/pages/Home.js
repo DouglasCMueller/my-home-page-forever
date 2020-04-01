@@ -59,7 +59,7 @@ class Home extends Component {
           <Header />
         <div className="mainContentContainer">
         <Grid>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <div className="welcomeContainer"><i className="fas fa-sun"></i> Good Morning, {this.state.fname}
  
             </div>
@@ -86,12 +86,12 @@ class Home extends Component {
 
           <Grid.Column width={3}>
           <div className="headlineContainer"><i className="far fa-newspaper"></i> Current Headlines</div>
-   <div>
+   <div className="individualHeadlineContainer">
               <GoogleNews />
             
             </div>
           </Grid.Column>
-          <Grid.Column width={6}>
+          <Grid.Column width={5}>
       
               <div className="homePageEventTitle"><i className="far fa-calendar-alt"></i> Events List</div>
             <div className="eventsPageLinkContainer"> <a className="eventsPageLink" href="/events">Click here to add/edit events</a>
@@ -148,7 +148,9 @@ class Home extends Component {
 </div>
            
           </Grid.Column>
+          <footer>This is a footer</footer>
         </Grid>
+        <footer>This is a footer</footer>
         </div>
       </>
     );

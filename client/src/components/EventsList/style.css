@@ -84,7 +84,7 @@ margin-left: 25px;
   }
 .newEventContainer{
 margin-right: 75px;
-border: solid 1px;
+border: solid 1px #4F7942;
 }
 .newEventDataTitle{
     font-size: 20px;
@@ -120,11 +120,14 @@ font-size: 20px;
     width: 442px;
     border: 1px solid #4F7942;
 }
+
 .newEventSubmitButton{
     font-size: 25px;
     color: #444c38;
     background-color: #edf5e1;
   margin: 5px;
  margin-left: 25px;
-
 }
+.newEventSubmitButton:hover{
+    color: #c7ea46;
+  }

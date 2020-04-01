@@ -71,7 +71,7 @@ class EventsList extends Component {
               <div className="newEventDataTitle">Note:</div>
               <textarea className="newEventNoteInput" id="newEventNoteTextAreaId" ></textarea>
 
-            <div>
+            <div className="newEventNoteSubmitButtonContainer">
               <button className="newEventSubmitButton">Submit</button>
             </div>
 

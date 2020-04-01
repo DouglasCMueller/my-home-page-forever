@@ -55,6 +55,12 @@ background-color: white;
 font-weight: bolder;
 font-size: 25px;
 text-align: center;
+height: 40px;
+}
+.individualHeadlineContainer{
+height: 726px;
+overflow-y:auto
+
 }
 .ui.column.grid>[class*="four wide"].column,
 .ui.grid>.column.row>[class*="four wide"].column,

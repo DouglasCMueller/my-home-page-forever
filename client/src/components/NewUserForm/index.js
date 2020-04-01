@@ -4,7 +4,7 @@ import API from "../../utils/API";
 
 
 class NewUserForm extends Component {
-  // Setting the initial values of this.state.username and this.state.password
+  
   state = {
     fname: "",
     lname: "",

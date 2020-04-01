@@ -71,9 +71,6 @@ margin-left: 25px;
     color: #444c38;
     background-color: #edf5e1;
 }
-
-
-
     .newTodoTitle{
         font-size: 30px;
         color: #444C38;
@@ -86,7 +83,7 @@ margin-left: 25px;
           }
     .newTodoContainer{
     margin-right: 75px;
-    border: solid 1px;
+    border: solid 1px #4F7942;
     }
     .newTodoDataTitle{
         font-size: 20px;
@@ -127,3 +124,6 @@ margin-left: 25px;
      margin-left: 25px;
     
     }
+    .newTodoSubmitButton:hover{
+        color: #c7ea46;
+      }
