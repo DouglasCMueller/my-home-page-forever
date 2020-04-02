@@ -124,3 +124,21 @@ height: auto;
      margin-left: 25px;
     
     }
+/* websites page footer styling */
+footer.page-footer.font-small.blue.fixed-bottom {
+    border-top: 8px solid #4aaaa5;
+    padding: 10px 20px;
+    background: #777777
+}
+
+footer h5 {
+    font-size: 15px;
+    line-height: 10px;
+    color: #ffffff;
+    text-align: center;
+    background: #777777;
+}
+.fa-copyright:before {
+  color: white;
+  background-color: #777777;
+}

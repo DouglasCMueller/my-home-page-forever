@@ -71,7 +71,7 @@ class LoginForm extends Component {
           onChange={this.handleInputChange}
         />
         <div className="submitButtonContainer">
-        <button onClick={this.handleFormSubmit}>Submit</button>
+        <button className="userLoginSubmitButton" onClick={this.handleFormSubmit}>Submit</button>
     
         <div  id="newUserButtons">
           <a  className="newUserLink" href="/newUser">New User</a>

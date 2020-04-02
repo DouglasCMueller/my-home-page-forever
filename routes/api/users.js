@@ -18,6 +18,12 @@ router
   .put(usersController.updateUserWebsite)
   .delete(usersController.remove);
 
+router
+.route("/todo/:id")
+.put(usersController.addUserTodo)
 
+router
+.route("/event/:id")
+.put(usersController.addUserEvent)
 
 module.exports = router;

@@ -1,4 +1,4 @@
-import React, { Component, Link } from "react";
+import React, { Component } from "react";
 import Header from "../components/Header/index"
 import DateShown from "../components/DateShown"
 import Timer from "../components/Timer"
@@ -6,8 +6,6 @@ import WeatherShown from "../components/Weather"
 import GoogleNews from "../components/GoogleNews"
 import StockQuoteShown from "../components/AlphaAdvantageStockQuotes"
 import ReactPlayer from 'react-player'
-import WebsiteButton from "../components/WebsiteButton"
-
 import { Grid } from 'semantic-ui-react'
 import API from "../utils/API";
 import "../App.css"
@@ -79,7 +77,12 @@ class Home extends Component {
    
             </div>
             <div className="reactPlayerContainer">
-            {/* <ReactPlayer width="265px" height="300px" url='https://www.youtube.com/watch?v=8tB7XOE9esE' playing /> */}
+            {/* <ReactPlayer 
+            width="350px"
+            height="200px"
+            url='https://www.youtube.com/watch?v=jWZ23VZ3Wcg'
+            playing="true"
+            loop="true" /> */}
             </div>
            
           </Grid.Column>
@@ -94,7 +97,7 @@ class Home extends Component {
           <Grid.Column width={5}>
       
               <div className="homePageEventTitle"><i className="far fa-calendar-alt"></i> Events List</div>
-            <div className="eventsPageLinkContainer"> <a className="eventsPageLink" href="/events">Click here to add/edit events</a>
+            <div className="eventsPageLinkContainer"> <a className="eventsPageLink" href="/events">Click here to add/delete events</a>
           </div>
                <div className="homePageEventsContainer">
               {this.state.events.map(event => (
@@ -111,7 +114,7 @@ class Home extends Component {
 
     
               <div className="homePageTodoTitle"><i className="fab fa-elementor"></i> Todos List</div>
-              <div className="todosPageLinkContainer"> <a className="todosPageLink" href="/todos">Click here to add/edit todos</a>
+              <div className="todosPageLinkContainer"> <a className="todosPageLink" href="/todos">Click here to add/delete todos</a>
               </div>
 
               <div className="homePageTodosContainer">
@@ -148,9 +151,11 @@ class Home extends Component {
 </div>
            
           </Grid.Column>
-          <footer>This is a footer</footer>
+          <footer class="page-footer font-small blue fixed-bottom">
+    <h5 >Copyright <i class="far fa-copyright"></i></h5> 
+  </footer>
         </Grid>
-        <footer>This is a footer</footer>
+ 
         </div>
       </>
     );

@@ -3,7 +3,6 @@ import API from "../../utils/API";
 import { Grid, } from 'semantic-ui-react'
 import './style.css'
 
-console.log(window.localStorage.getItem("id"))
 let userId = window.localStorage.getItem("id");
 
 class TodosList extends Component {
@@ -17,14 +16,17 @@ class TodosList extends Component {
   componentDidMount() {
     this.loadUserTodos();
   }
+  componentDidUpdate(){
+    this.loadUserTodos();
+}
 
   loadUserTodos = () => {
     API.getUserById(userId)
       .then(res => {
-        console.log(res)
+        console.log("sent")
         this.setState({
           todos: res.data.todo,
-          fname: res.data.fname
+   
         })
       })
       .catch(err => console.log(err));
@@ -50,11 +52,14 @@ handleFormSubmit = event => {
 }
 
 console.log(savedTodo)
-  // API.updateUserTodo(userId, savedTodo)
-  //  .then (req=>{
-  //    console.log(req)
-  //  })
-  // this.setState({ title: "", note: ""});
+  API.addUserTodo(userId, savedTodo)
+   .then (res=>{
+     console.log("sent")
+   },()=> {
+    this.loadUserTodos();
+    
+})
+  this.setState({ title: "", note: ""});
 
 };
 
@@ -74,7 +79,7 @@ console.log(savedTodo)
                   <div className="todosListShownContainer" key={todo.title}>
                     <p className="todoListEachContainer"><strong>Title:     </strong>{todo.title}</p>
                     <p className="todoListEachContainer"><strong>Note:     </strong>{todo.note}</p>
-                    <button className="todoListContainerEditButton">Edit</button>
+                 
                     <button className="todoListContainerDeleteButton">Delete</button>
                   </div>
                 ))}
@@ -108,6 +113,9 @@ console.log(savedTodo)
               </div>
             </div>
           </Grid.Column>
+          <footer class="page-footer font-small blue fixed-bottom">
+    <h5 >Copyright <i class="far fa-copyright"></i></h5> 
+  </footer>
         </Grid>
       </>
     )

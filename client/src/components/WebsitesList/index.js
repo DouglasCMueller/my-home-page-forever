@@ -5,7 +5,6 @@ import { Grid, } from 'semantic-ui-react'
 import API from "../../utils/API";
 import './style.css'
 
-console.log(window.localStorage.getItem("id"))
 let userId = window.localStorage.getItem("id");
 
 class WebsitesList extends Component {
@@ -21,6 +20,10 @@ class WebsitesList extends Component {
     };
 
     componentDidMount() {
+        this.loadWebsites();
+        this.getUserFavorites();
+    }
+    componentDidUpdate(){
         this.loadWebsites();
         this.getUserFavorites();
     }
@@ -53,11 +56,8 @@ class WebsitesList extends Component {
         console.log(clickedWebsite)
         API.updateUserWebsite(userId, clickedWebsite)
             .then(req => {
-                console.log(req)
+                console.log("sent")
             })
-
-
-
 
     }
     // handle any changes to the input fields
@@ -77,17 +77,18 @@ class WebsitesList extends Component {
         const savedWebsite = {
             name: this.state.name,
             url: this.state.url,
-            category: this.state.category
+            category: this.state.category || "Social Media"
         }
 
-        console.log(savedWebsite)
-        API.saveWebsite(savedWebsite)
+              API.saveWebsite(savedWebsite)
             .then(req => {
-                console.log(req)
+                console.log("sent")
+            },()=> {
+                this.loadWebsites();
+                this.getUserFavorites();
             })
         this.setState({ name: "", url: "", category: "" });
-        this.loadWebsites();
-        this.getUserFavorites();
+      
     };
 
 
@@ -107,10 +108,11 @@ class WebsitesList extends Component {
                                     <div className="websitesFavoritesButtonsContainer">
                                         {this.state.userFavoriteWebsites.map(userFavoriteWebsite => (
                                             <WebsiteButton
+                                            key={userFavoriteWebsite.id}
                                                 clicked={this.clicked}
                                                 onClick={() => this.handleSaveFavorite(userFavoriteWebsite.id)}
-                                                key={userFavoriteWebsite._id}
-                                                id={userFavoriteWebsite._id}
+                              
+                                                id={userFavoriteWebsite.id}
                                                 name={userFavoriteWebsite.name}
                                                 url={userFavoriteWebsite.url}
                                                 category={userFavoriteWebsite.category}
@@ -134,9 +136,10 @@ class WebsitesList extends Component {
                                                     <div className="socialMediaCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "Social Media").map(currentWebsite => (
                                                             <WebsiteButton
+                                                            key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                                key={currentWebsite._id}
+                                                        
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -154,9 +157,10 @@ class WebsitesList extends Component {
                                                     <div className="emailCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "News").map(currentWebsite => (
                                                             <WebsiteButton
+                                                            key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                                key={currentWebsite._id}
+                                                           
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -173,9 +177,10 @@ class WebsitesList extends Component {
                                                     <div className="emailCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "Travel").map(currentWebsite => (
                                                             <WebsiteButton
+                                                            key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                                key={currentWebsite._id}
+                                                         
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -193,9 +198,10 @@ class WebsitesList extends Component {
                                                     <div className="emailCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "Shopping").map(currentWebsite => (
                                                             <WebsiteButton
+                                                            key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                                key={currentWebsite._id}
+                                                  
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -213,9 +219,10 @@ class WebsitesList extends Component {
                                                     <div className="emailCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "Other").map(currentWebsite => (
                                                             <WebsiteButton
+                                                            key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                                key={currentWebsite._id}
+                                                        
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -248,7 +255,7 @@ class WebsitesList extends Component {
 
                             ></input>
                             <div className="newWebsiteDataTitle">Url:</div>
-                            <input className="newWebsiteUrlInput" id="newWebsiteUrlInputId" type="text" placeholder="www.google.com"
+                            <input className="newWebsiteUrlInput" id="newWebsiteUrlInputId"
 
                                 type="text"
                                 placeholder=""
@@ -281,6 +288,9 @@ class WebsitesList extends Component {
 
                         </div>
                     </Grid.Column>
+                    <footer className="page-footer font-small blue fixed-bottom">
+    <h5 >Copyright <i className="far fa-copyright"></i></h5> 
+  </footer>
                 </Grid>
             </>
         )

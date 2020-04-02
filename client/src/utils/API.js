@@ -41,12 +41,22 @@ export default {
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
   },
-  // Updates a user to the database
+  // Updates a website to user 
   updateUserWebsite: function(id, userdata) {
     return axios.put("/api/users/" + id, userdata);
   },
-  
+   // Updates a todo to user
+   addUserTodo: function(id, userdata) {
+    return axios.put("/api/users/todo/" + id, userdata);
+  },
+ // Updates an event to user
+ addUserEvent: function(id, userdata) {
+  return axios.put("/api/users/event/" + id, userdata);
+},
+
+
 // axios routes for todos
+
 getTodos: function() {
   // Gets all todos
   return axios.get("/api/todos");

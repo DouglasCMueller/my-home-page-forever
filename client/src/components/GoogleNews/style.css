@@ -3,10 +3,11 @@ body{
 }
 
 .googleHeadlinesContainer{
-    height: auto;
+    height: 615.66px;
+    overflow-y:auto;
 }
 .individualHeadlineContainer{
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid #444c38;
 }
 a.headlineLink{
     font-size: 15px;

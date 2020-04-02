@@ -34,7 +34,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
- 
+  addUserTodo: function (req, res) {
+    db.User
+      .findOneAndUpdate({ _id: req.params.id }, { $push: { todo: req.body } })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  addUserEvent: function (req, res) {
+    db.User
+      .findOneAndUpdate({ _id: req.params.id }, { $push: { event: req.body } })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   remove: function (req, res) {
     db.User
       .findById({ _id: req.params.id })

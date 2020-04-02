@@ -74,3 +74,15 @@ color: #05386B;
 a.newUserLink{
     color: #05386B
 }
+.userLoginSubmitButton{
+
+font-size: 25px;
+color: #444c38;
+background-color: #edf5e1;
+margin: 5px;
+margin-left: 25px;
+
+}
+.userLoginSubmitButton:hover{
+color: #c7ea46;
+}

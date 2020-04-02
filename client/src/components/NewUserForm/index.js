@@ -112,7 +112,7 @@ event: []
           onChange={this.handleInputChange}
         />
         <div class="buttonContainer">
-        <button onClick={this.handleFormSubmit}>Submit</button>
+        <button class="newUserSubmitButton" onClick={this.handleFormSubmit}>Submit</button>
         </div>
       </form>
       </div>
