@@ -62,19 +62,19 @@ class Home extends Component {
  
             </div>
             <div className="timeContainer">
-              <DateShown />
+              {/* <DateShown />
 
-              <Timer />
+              <Timer /> */}
         
             </div>
             <div className="weatherContainer">
           Weather in: {this.state.locationcity},{this.state.locationstate}
-              <WeatherShown />
+              {/* <WeatherShown /> */}
             </div>
             <div className="stockMarketContainer">
          Stock Market
-       <StockQuoteShown />
-   
+       {/* <StockQuoteShown />
+    */}
             </div>
             <div className="reactPlayerContainer">
             {/* <ReactPlayer 
@@ -90,7 +90,7 @@ class Home extends Component {
           <Grid.Column width={3}>
           <div className="headlineContainer"><i className="far fa-newspaper"></i> Current Headlines</div>
    <div className="individualHeadlineContainer">
-              <GoogleNews />
+              {/* <GoogleNews /> */}
             
             </div>
           </Grid.Column>
@@ -137,7 +137,7 @@ class Home extends Component {
           <div className="homePageWebsitesContainer">
           {this.state.userfavoritewebsites.map(userfavoritewebsite => (
                                 <a className="homePageUserFavoriteWebsiteButton"
-                                        key={userfavoritewebsite._id}
+                                        key={userfavoritewebsite.name}
                                         href={'//' + userfavoritewebsite.url}
                                         target="_blank"
                                         rel="noopener noreferrer" 
@@ -151,8 +151,8 @@ class Home extends Component {
 </div>
            
           </Grid.Column>
-          <footer class="page-footer font-small blue fixed-bottom">
-    <h5 >Copyright <i class="far fa-copyright"></i></h5> 
+          <footer className="page-footer font-small blue fixed-bottom">
+    <h5 >Copyright <i className="far fa-copyright"></i></h5> 
   </footer>
         </Grid>
  

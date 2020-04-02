@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import  './style.css'
 import API from "../../utils/API";
-
+var bcrypt = require('bcryptjs');
+var salt = bcrypt.genSaltSync(10);
 
 class NewUserForm extends Component {
   
@@ -29,13 +30,19 @@ class NewUserForm extends Component {
   // When the form is submitted, prevent the default event and alert the username and password
   handleFormSubmit = event => {
     event.preventDefault();
+
+    let myPlaintextPassword = this.state.password;
+    console.log(myPlaintextPassword);
+    var hash = bcrypt.hashSync(myPlaintextPassword, salt);
+console.log(hash)
+
    const user = {
      fname: this.state.fname,
      lname: this.state.lname,
      locationcity: this.state.locationcity,
      locationstate: this.state.locationstate,
 email: this.state.email,
-password: this.state.password,
+password: hash,
 todo: [],
 event: []
  }
@@ -58,7 +65,7 @@ event: []
   render() {
     return (
       <div className= "formContainer">
-        <div class="loginFormTitle">New User Login Form</div>
+        <div className="loginFormTitle">New User Login Form</div>
       <form>
         <p>First Name:</p>
           <input
@@ -111,11 +118,15 @@ event: []
           value={this.state.password}
           onChange={this.handleInputChange}
         />
-        <div class="buttonContainer">
-        <button class="newUserSubmitButton" onClick={this.handleFormSubmit}>Submit</button>
+        <div className="buttonContainer">
+        <button className="newUserSubmitButton" onClick={this.handleFormSubmit}>Submit</button>
         </div>
       </form>
+      <footer className="page-footer font-small blue fixed-bottom">
+    <h5 >Copyright <i className="far fa-copyright"></i></h5> 
+  </footer>
       </div>
+      
     );
   }
 }

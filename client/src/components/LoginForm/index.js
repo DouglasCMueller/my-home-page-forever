@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import './style.css'
 import API from "../../utils/API";
+var bcrypt = require('bcryptjs');
 
+localStorage.removeItem("id")
 
 class LoginForm extends Component {
 
@@ -22,16 +24,14 @@ class LoginForm extends Component {
   // When the form is submitted, prevent the default event and alert the username and password
   handleFormSubmit = event => {
     event.preventDefault();
-   const email =  {email: this.state.email};
-   const password = this.state.password;
-
+   let email =  {email: this.state.email};
+   let password = this.state.password;
+    
     API.getUserByEmail(email)
 
     .then(res => {
- console.log(res)
- console.log(res.data[0].password)
- console.log(typeof password)
- if (res.data[0].password === password){
+
+ if (bcrypt.compareSync(password, res.data[0].password)){
    console.log("password matches");
    console.log(res.data[0]._id)
 
@@ -79,6 +79,9 @@ class LoginForm extends Component {
         
         </div>
       </form>
+      <footer className="page-footer font-small blue fixed-bottom">
+    <h5 >Copyright <i className="far fa-copyright"></i></h5> 
+  </footer>
       </div>
       
     );

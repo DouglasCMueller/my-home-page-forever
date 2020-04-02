@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
     "modal": "^1.2.0",
     "moment": "^2.24.0",
     "mongoose-date-format": "^1.2.0",

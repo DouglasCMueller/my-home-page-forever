@@ -8,7 +8,7 @@ class NewUser extends Component {
     return (
       <>
           
-          <div class="ui segment" id="headerContainer"><i class="fas fa-air-freshener" id="iconTitle">         My Morning Refresh</i>
+          <div className="ui segment" id="headerContainer"><i className="fas fa-air-freshener" id="iconTitle">         My Morning Refresh</i>
   
  </div>
       <NewUserForm />
