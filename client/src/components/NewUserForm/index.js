@@ -16,19 +16,15 @@ class NewUserForm extends Component {
     
   };
 
-  // handle any changes to the input fields
-  handleInputChange = event => {
-    // Pull the name and value properties off of the event.target (the element which triggered the event)
-    const { name, value } = event.target;
+    handleInputChange = event => {
+     const { name, value } = event.target;
 
-    // Set the state for the appropriate input field
     this.setState({
       [name]: value
     });
   };
 
-  // When the form is submitted, prevent the default event and alert the username and password
-  handleFormSubmit = event => {
+    handleFormSubmit = event => {
     event.preventDefault();
 
     let myPlaintextPassword = this.state.password;

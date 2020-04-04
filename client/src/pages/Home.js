@@ -3,9 +3,11 @@ import Header from "../components/Header/index"
 import DateShown from "../components/DateShown"
 import Timer from "../components/Timer"
 import WeatherShown from "../components/Weather"
+import FunFactOfTheDay from "../components/FunFactOfTheDay"
 import GoogleNews from "../components/GoogleNews"
 import StockQuoteShown from "../components/AlphaAdvantageStockQuotes"
 import ReactPlayer from 'react-player'
+import ReactPlayerVideo from '../components/media/media.json'
 import { Grid } from 'semantic-ui-react'
 import API from "../utils/API";
 import "../App.css"
@@ -62,27 +64,35 @@ class Home extends Component {
  
             </div>
             <div className="timeContainer">
-              {/* <DateShown />
+              <DateShown />
 
-              <Timer /> */}
+              <Timer />
         
             </div>
             <div className="weatherContainer">
           Weather in: {this.state.locationcity},{this.state.locationstate}
-              {/* <WeatherShown /> */}
+              <WeatherShown />
             </div>
+
+
             <div className="stockMarketContainer">
          Stock Market
-       {/* <StockQuoteShown />
-    */}
+       <StockQuoteShown />
+   
             </div>
+
+            <div className="funFactOfTheDayContainer">
+              <div className="funFactOfTheDayTitle">Random Number Fact:</div>
+
+<FunFactOfTheDay />
+</div>
             <div className="reactPlayerContainer">
-            {/* <ReactPlayer 
+            <ReactPlayer 
             width="350px"
             height="200px"
-            url='https://www.youtube.com/watch?v=jWZ23VZ3Wcg'
-            playing="true"
-            loop="true" /> */}
+            url="https://www.youtube.com/watch?v=jWZ23VZ3Wcg"
+            playing={true}
+            loop={true} />
             </div>
            
           </Grid.Column>
@@ -90,7 +100,7 @@ class Home extends Component {
           <Grid.Column width={3}>
           <div className="headlineContainer"><i className="far fa-newspaper"></i> Current Headlines</div>
    <div className="individualHeadlineContainer">
-              {/* <GoogleNews /> */}
+              <GoogleNews />
             
             </div>
           </Grid.Column>
@@ -151,8 +161,8 @@ class Home extends Component {
 </div>
            
           </Grid.Column>
-          <footer className="page-footer font-small blue fixed-bottom">
-    <h5 >Copyright <i className="far fa-copyright"></i></h5> 
+          <footer className="footer">
+    Copyright <i className="far fa-copyright"></i>
   </footer>
         </Grid>
  

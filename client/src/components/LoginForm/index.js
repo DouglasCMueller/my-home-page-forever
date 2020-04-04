@@ -3,7 +3,6 @@ import './style.css'
 import API from "../../utils/API";
 var bcrypt = require('bcryptjs');
 
-localStorage.removeItem("id")
 
 class LoginForm extends Component {
 
@@ -73,9 +72,11 @@ class LoginForm extends Component {
         <div className="submitButtonContainer">
         <button className="userLoginSubmitButton" onClick={this.handleFormSubmit}>Submit</button>
     
-        <div  id="newUserButtons">
-          <a  className="newUserLink" href="/newUser">New User</a>
-          </div>
+        <button className="newUserButton"><a
+          id="newUserButtons"
+          className="newUserLink" 
+          href="/newUser">New User
+          </a></button>
         
         </div>
       </form>

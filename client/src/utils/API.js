@@ -45,15 +45,28 @@ export default {
   updateUserWebsite: function(id, userdata) {
     return axios.put("/api/users/" + id, userdata);
   },
+  
+  deleteUserWebsite: function(id, userdata) {
+    return axios.post("/api/users/website/" + id, userdata);
+  },
+
+
    // Updates a todo to user
    addUserTodo: function(id, userdata) {
     return axios.put("/api/users/todo/" + id, userdata);
+  },
+   // Deletes a todo to user
+   deleteUserTodo: function(id, userdata) {
+    return axios.post("/api/users/todo/" + id, userdata);
   },
  // Updates an event to user
  addUserEvent: function(id, userdata) {
   return axios.put("/api/users/event/" + id, userdata);
 },
-
+ // Deletes a todo to user
+ deleteUserEvent: function(id, userdata) {
+  return axios.post("/api/users/event/" + id, userdata);
+},
 
 // axios routes for todos
 

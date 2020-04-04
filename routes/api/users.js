@@ -21,9 +21,15 @@ router
 router
 .route("/todo/:id")
 .put(usersController.addUserTodo)
+.post(usersController.deleteUserTodo)
 
 router
 .route("/event/:id")
 .put(usersController.addUserEvent)
+.post(usersController.deleteUserEvent)
+
+router
+.route("/website/:id")
+.post(usersController.deleteUserWebsite)
 
 module.exports = router;

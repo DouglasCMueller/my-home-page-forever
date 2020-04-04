@@ -5,7 +5,7 @@ body{
     font-size: 25px;
     text-align: center;
     padding: 15px;
-    color: #05386B;
+   
     font-weight: bolder;
 }
 .formContainer{
@@ -16,7 +16,7 @@ width: 100%;
 p{
     margin:0px;
   margin-left: 25px;
-    color: #05386B;
+ color: #4f7942;
     font-size: 25px;
     padding: 0px;
 
@@ -25,7 +25,7 @@ input{
     margin-left: 25px;
     width: 90%;
     border: 2px solid grey;
-    color: #05386B;
+    color: #4f7942;
  font-size: 35px;
   
 }
@@ -48,11 +48,14 @@ input[type=text]{
 }
 input[type=text]:not(textarea){
     height: 55px;
+    color: #4f7942;
 }
 
 input[type=password]:not(textarea){
     height: 55px;
+    color: #4f7942;
 }
+
 .newUserButton{
 
     float: right;
@@ -60,19 +63,19 @@ input[type=password]:not(textarea){
 }
 
 #newUserButtons{
-    font-size: 30px;
-    height: 50px;
-    width: 150px;
-    float: right;
-    margin-right: 20px; 
-background-color: lightgray;
-color: #05386B;
-    border: solid 1px black;
-    text-align: center;
-    margin-bottom: 15px;
+    display: inline-block;
+   
+    font-size: 25px;
+    color: #444c38;
+    background-color: #edf5e1;
+    margin: 5px;
+    margin-left: 25px;
+}
+#newUserButtons:hover{
+    color: #c7ea46;
 }
 a.newUserLink{
-    color: #05386B
+    color: #444c38;
 }
 .userLoginSubmitButton{
 
@@ -85,4 +88,8 @@ margin-left: 25px;
 }
 .userLoginSubmitButton:hover{
 color: #c7ea46;
+}
+.newUserButton{
+ float: right;
+ background-color: #edf5e1;
 }

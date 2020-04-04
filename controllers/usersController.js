@@ -34,18 +34,45 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  deleteUserWebsite: function (req, res) {
+    console.log(req.body)
+    
+     db.User
+       .findByIdAndUpdate({ _id: req.params.id }, { $pull: { favoritewebsite: {id: req.body.id }}})
+       .then(dbModel => res.json(dbModel))
+       .catch(err => res.status(422).json(err));
+   },
+
   addUserTodo: function (req, res) {
     db.User
       .findOneAndUpdate({ _id: req.params.id }, { $push: { todo: req.body } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  deleteUserTodo: function (req, res) {
+   console.log(req.body)
+   
+    db.User
+      .findByIdAndUpdate({ _id: req.params.id }, { $pull: { todo: {title: req.body.title }}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   addUserEvent: function (req, res) {
+
     db.User
       .findOneAndUpdate({ _id: req.params.id }, { $push: { event: req.body } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  deleteUserEvent: function (req, res) {
+    console.log(req.body)
+    
+     db.User
+       .findByIdAndUpdate({ _id: req.params.id }, { $pull: { event: {title: req.body.title }}})
+       .then(dbModel => res.json(dbModel))
+       .catch(err => res.status(422).json(err));
+   },
+
   remove: function (req, res) {
     db.User
       .findById({ _id: req.params.id })

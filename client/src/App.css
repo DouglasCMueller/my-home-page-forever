@@ -7,10 +7,13 @@
     font-family: 'Roboto', sans-serif;
     line-height: 1.4;
     background-color: white;
+  
     }
 .mainContentContainer{
 color: #379683;
 background-color: white;
+
+
 }
 .ui.column.grid>[class*="eight wide"].column,
 .ui.grid>.column.row>[class*="eight wide"].column,
@@ -50,6 +53,16 @@ background-color: white;
   text-align: center;
   font-size: 25px;
 }
+.funFactOfTheDayContainer{
+  margin-left: 10px;
+  color: #4f7942;
+ }
+ .funFactOfTheDayTitle{
+  color: #00a86b;
+  text-align: center;
+  font-size: 25px;
+  
+ }
 .reactPlayerContainer{
   margin-left: 5px;
 }
@@ -201,20 +214,27 @@ a:hover{
 }
 
 /* home page footer styling */
-footer.page-footer.font-small.blue.fixed-bottom {
-    border-top: 8px solid #4aaaa5;
-    padding: 10px 20px;
-    background: #777777
+i.far.fa-copyright::before {
+  color: #2e8b57;
+  background-color:#EDF5C1;
 }
-
 footer h5 {
     font-size: 15px;
     line-height: 10px;
     color: #ffffff;
     text-align: center;
-    background: #777777;
+    background: #EDF5C1;
 }
-.fa-copyright:before {
-  color: white;
-  background-color: #777777;
+
+.footer{
+  padding: 5px;
+  border-top: solid 2px #2e8b57;
+  border-bottom: solid 2px #2e8b57;
+width: 100%;
+background: #EDF5C1;
+color: #2e8b57;
+text-align: center;
+position: fixed;
+bottom: 0;
+
 }

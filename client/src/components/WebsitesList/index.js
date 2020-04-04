@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import WebsiteButton from "../WebsiteButton"
 import { Grid, } from 'semantic-ui-react'
@@ -11,7 +10,6 @@ class WebsitesList extends Component {
 
     state = {
         currentWebsites: [],
-
         userFavoriteWebsites: [],
         id: "",
         name: "",
@@ -20,10 +18,6 @@ class WebsitesList extends Component {
     };
 
     componentDidMount() {
-        this.loadWebsites();
-        this.getUserFavorites();
-    }
-    componentDidUpdate(){
         this.loadWebsites();
         this.getUserFavorites();
     }
@@ -57,21 +51,36 @@ class WebsitesList extends Component {
         API.updateUserWebsite(userId, clickedWebsite)
             .then(req => {
                 console.log("sent")
+                window.location = '/websites/'
             })
-
     }
-    // handle any changes to the input fields
+    deleteUserFavoriteWebsite = (id, name, url, category, favorite) => {
+        console.log("website favorite delete clicked")
+        let deletedWebsite = {
+            id: id,
+            name: name,
+            url: url,
+            category: category,
+            favorite: favorite
+        }
+        console.log(deletedWebsite)
+        API.deleteUserWebsite(userId, deletedWebsite)
+            .then(res => {
+                console.log("deleted website")
+                window.location = '/websites/'
+            })
+        this.setState({ date: "", time: "", title: "", note: "" });
+    }
+
     handleInputChange = event => {
-        // Pull the name and value properties off of the event.target (the element which triggered the event)
+
         const { name, value } = event.target;
 
-        // Set the state for the appropriate input field
         this.setState({
             [name]: value
         });
     };
 
-    // When the form is submitted, prevent the default event and alert the username and password
     handleFormSubmit = event => {
         event.preventDefault();
         const savedWebsite = {
@@ -80,15 +89,12 @@ class WebsitesList extends Component {
             category: this.state.category || "Social Media"
         }
 
-              API.saveWebsite(savedWebsite)
+        API.saveWebsite(savedWebsite)
             .then(req => {
                 console.log("sent")
-            },()=> {
-                this.loadWebsites();
-                this.getUserFavorites();
             })
         this.setState({ name: "", url: "", category: "" });
-      
+        window.location = '/websites/'
     };
 
 
@@ -108,10 +114,10 @@ class WebsitesList extends Component {
                                     <div className="websitesFavoritesButtonsContainer">
                                         {this.state.userFavoriteWebsites.map(userFavoriteWebsite => (
                                             <WebsiteButton
-                                            key={userFavoriteWebsite.id}
-                                                clicked={this.clicked}
-                                                onClick={() => this.handleSaveFavorite(userFavoriteWebsite.id)}
-                              
+                                                key={userFavoriteWebsite.id}
+                                                clicked={this.deleteUserFavoriteWebsite}
+                                                onClick={() => this.handleSaveFavorite()}
+
                                                 id={userFavoriteWebsite.id}
                                                 name={userFavoriteWebsite.name}
                                                 url={userFavoriteWebsite.url}
@@ -136,10 +142,10 @@ class WebsitesList extends Component {
                                                     <div className="socialMediaCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "Social Media").map(currentWebsite => (
                                                             <WebsiteButton
-                                                            key={currentWebsite._id}
+                                                                key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                        
+
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -157,10 +163,10 @@ class WebsitesList extends Component {
                                                     <div className="emailCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "News").map(currentWebsite => (
                                                             <WebsiteButton
-                                                            key={currentWebsite._id}
+                                                                key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                           
+
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -177,10 +183,10 @@ class WebsitesList extends Component {
                                                     <div className="emailCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "Travel").map(currentWebsite => (
                                                             <WebsiteButton
-                                                            key={currentWebsite._id}
+                                                                key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                         
+
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -198,10 +204,10 @@ class WebsitesList extends Component {
                                                     <div className="emailCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "Shopping").map(currentWebsite => (
                                                             <WebsiteButton
-                                                            key={currentWebsite._id}
+                                                                key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                  
+
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -219,10 +225,10 @@ class WebsitesList extends Component {
                                                     <div className="emailCategoryButtonsContainer">
                                                         {this.state.currentWebsites.filter(currentWebsite => currentWebsite.category === "Other").map(currentWebsite => (
                                                             <WebsiteButton
-                                                            key={currentWebsite._id}
+                                                                key={currentWebsite._id}
                                                                 clicked={this.clicked}
                                                                 onClick={() => this.handleSaveFavorite(currentWebsite.id)}
-                                                        
+
                                                                 id={currentWebsite._id}
                                                                 name={currentWebsite.name}
                                                                 url={currentWebsite.url}
@@ -244,14 +250,13 @@ class WebsitesList extends Component {
                         <div className="newWebsiteTitle"><i className="fab fa-chrome"></i>    New Website</div>
                         <div className="newWebsiteContainer">
                             <div className="newWebsiteDataTitle">Name:</div>
-                            <input className="newWebsiteUrlInput" id="newWebsiteUrlInputId"
+                            <input className="newWebsiteUrlInput" id="newWebsiteNameInputId"
 
                                 type="text"
                                 placeholder=""
                                 name="name"
                                 value={this.state.name}
                                 onChange={this.handleInputChange}
-
 
                             ></input>
                             <div className="newWebsiteDataTitle">Url:</div>
@@ -262,9 +267,6 @@ class WebsitesList extends Component {
                                 name="url"
                                 value={this.state.url}
                                 onChange={this.handleInputChange}
-
-
-
 
                             ></input>
                             <div className="newWebsiteDataTitle">Category:</div>
@@ -288,9 +290,9 @@ class WebsitesList extends Component {
 
                         </div>
                     </Grid.Column>
-                    <footer className="page-footer font-small blue fixed-bottom">
-    <h5 >Copyright <i className="far fa-copyright"></i></h5> 
-  </footer>
+                    <footer className="footer">
+                        Copyright <i className="far fa-copyright"></i>
+                    </footer>
                 </Grid>
             </>
         )

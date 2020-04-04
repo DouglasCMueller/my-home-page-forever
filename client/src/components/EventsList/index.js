@@ -19,33 +19,27 @@ class EventsList extends Component {
   componentDidMount() {
     this.loadUserEvents();
   }
-  componentDidUpdate(){
-    this.loadUserEvents();
-}
+
   loadUserEvents = () => {
     API.getUserById(userId)
       .then(res => {
-        console.log(res)
+     console.log("sent")
         this.setState({
           events: res.data.event,
-       
+             
         })
       })
       .catch(err => console.log(err));
   };
 
-// handle any changes to the input fields
 handleInputChange = event => {
-  // Pull the name and value properties off of the event.target (the element which triggered the event)
-  const { name, value } = event.target;
+   const { name, value } = event.target;
 
-  // Set the state for the appropriate input field
-  this.setState({
+ this.setState({
     [name]: value
   });
 };
 
-// When the form is submitted, prevent the default event and alert the username and password
 handleFormSubmit = event => {
   event.preventDefault();
  const savedEvent = {
@@ -58,15 +52,31 @@ handleFormSubmit = event => {
 console.log(savedEvent)
   API.addUserEvent(userId, savedEvent)
    .then (res=>{
-     console.log(res)
-   },()=> {
-    this.loadUserEvents();
-    
-})
-  this.setState({ date: "", time: "", title: "", note: ""});
+     console.log("event saved")
+     window.location= '/events/'
+   },)  
 
+  this.setState({ date: "", time: "", title: "", note: ""});
 };
 
+deleteEvent = (date, time, title, note) =>{
+
+  console.log("event delete clicked")
+  
+  let deletedEvent ={
+    date: date,
+    time: time,
+    title: title,
+    note: note
+  }
+  console.log(deletedEvent)
+  API.deleteUserEvent(userId, deletedEvent)
+  .then (res=>{
+    console.log("deleted event")
+     window.location= '/events/'
+  },)
+  this.setState({ date: "", time: "", title: "", note: ""});
+  }
 
   render() {
     return (
@@ -74,18 +84,32 @@ console.log(savedEvent)
         <Grid>
           <Grid.Column width={10}>
             <div className="eventPageEventsContainer">
-              <div className="eventPageEventsTitle"><i class="fab fa-elementor"></i> Events List
+              <div className="eventPageEventsTitle"><i className="fab fa-elementor"></i> Events List
           </div>
               <div className="eventPageIndividualEventsContainer">
                 {this.state.events.map(event => (
 
                   <div className="eventsListShownContainer" key={event.title}>
-                    <p className="eventListEachContainer"><strong>Date:     </strong>{event.date}</p>
-                    <p className="eventListEachContainer"><strong>Time:     </strong>{event.time}</p>
-                    <p className="eventListEachContainer"><strong>Title:     </strong>{event.title}</p>
-                    <p className="eventListEachContainer"><strong>Note:     </strong>{event.note}</p>
+                    <p className="eventListEachContainer"
+                    name="date"
+                    value={this.state.date}
+                    ><strong>Date:     </strong>{event.date}</p>
+                    <p className="eventListEachContainer"
+                    name="time"
+                    value={this.state.time}
+                    ><strong>Time:     </strong>{event.time}</p>
+                    <p className="eventListEachContainer"
+                    name="title"
+                    value={this.state.title}
+                    ><strong>Title:     </strong>{event.title}</p>
+                    <p className="eventListEachContainer"
+                    name="note"
+                    value={this.state.note}
+                    ><strong>Note:     </strong>{event.note}</p>
             
-                    <button className="eventListContainerDeleteButton">Delete</button>
+                    <button className="eventListContainerDeleteButton"
+                    onClick={() => this.deleteEvent(event.date, event.time, event.title, event.note)}
+                    >Delete</button>
                   </div>
 
                 ))}
@@ -98,7 +122,7 @@ console.log(savedEvent)
           </Grid.Column>
           
           <Grid.Column width={6}>
-            <div className="newEventTitle"><i class="fab fa-elementor"></i>    New Event</div>
+            <div className="newEventTitle"><i className="fab fa-elementor"></i>    New Event</div>
             <div className="newEventContainer">
               <div className="newEventDataTitle">Date:</div>
               <input className="newEventDateInput" id="newEventDateInputId"
@@ -146,8 +170,8 @@ console.log(savedEvent)
 
             </div>
           </Grid.Column>
-          <footer class="page-footer font-small blue fixed-bottom">
-    <h5 >Copyright <i class="far fa-copyright"></i></h5> 
+          <footer className="footer">
+    Copyright <i className="far fa-copyright"></i>
   </footer>
         </Grid>
 
