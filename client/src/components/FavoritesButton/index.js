@@ -9,7 +9,6 @@ function FavoritesButton(props) {
         <div className = "card-img" >{ props.name }</div>
         </div>
   
-
     );
 }
 export default FavoritesButton;

@@ -7,10 +7,6 @@ router.route("/")
   .get(websitesController.findAll)
   .post(websitesController.create);
 
-// router.route("/login")
-//   .post(usersController.findByEmail)
-  
-  
 // Matches with "/api/websites/:id"
 router
   .route("/:id")
@@ -24,7 +20,5 @@ router
   .get(websitesController.findByName)
   .put(websitesController.update)
   .delete(websitesController.remove);
-
-
 
 module.exports = router;

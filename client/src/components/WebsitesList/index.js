@@ -47,15 +47,15 @@ class WebsitesList extends Component {
             url: url,
             category: category
         }
-        console.log(clickedWebsite)
+
         API.updateUserWebsite(userId, clickedWebsite)
             .then(req => {
-                console.log("sent")
+
                 window.location = '/websites/'
             })
     }
     deleteUserFavoriteWebsite = (id, name, url, category, favorite) => {
-        console.log("website favorite delete clicked")
+
         let deletedWebsite = {
             id: id,
             name: name,
@@ -63,10 +63,10 @@ class WebsitesList extends Component {
             category: category,
             favorite: favorite
         }
-        console.log(deletedWebsite)
+
         API.deleteUserWebsite(userId, deletedWebsite)
             .then(res => {
-                console.log("deleted website")
+
                 window.location = '/websites/'
             })
         this.setState({ date: "", time: "", title: "", note: "" });
@@ -91,12 +91,11 @@ class WebsitesList extends Component {
 
         API.saveWebsite(savedWebsite)
             .then(req => {
-                console.log("sent")
+
             })
         this.setState({ name: "", url: "", category: "" });
         window.location = '/websites/'
     };
-
 
     render() {
         return (

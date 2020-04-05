@@ -9,7 +9,7 @@ class TodosList extends Component {
 
   state = {
     title: "",
-    note:"",
+    note: "",
     todos: [],
   };
 
@@ -20,59 +20,54 @@ class TodosList extends Component {
   loadUserTodos = () => {
     API.getUserById(userId)
       .then(res => {
-        console.log("sent")
+
         this.setState({
           todos: res.data.todo,
-   
+
         })
       })
       .catch(err => console.log(err));
   };
 
- // handle any changes to the input fields
- handleInputChange = event => {
-  // Pull the name and value properties off of the event.target (the element which triggered the event)
-  const { name, value } = event.target;
+  handleInputChange = event => {
 
-  // Set the state for the appropriate input field
-  this.setState({
-    [name]: value
-  });
-};
+    const { name, value } = event.target;
 
+    this.setState({
+      [name]: value
+    });
+  };
 
-handleFormSubmit = event => {
-  event.preventDefault();
- const savedTodo = {
-   title: this.state.title,
-   note: this.state.note
-}
+  handleFormSubmit = event => {
+    event.preventDefault();
+    const savedTodo = {
+      title: this.state.title,
+      note: this.state.note
+    }
 
-console.log(savedTodo)
-  API.addUserTodo(userId, savedTodo)
-   .then (res=>{
-     console.log("new todo sent")
-       window.location= '/todos/'
-   },)
-  this.setState({ title: "", note: ""});
-};
+    console.log(savedTodo)
+    API.addUserTodo(userId, savedTodo)
+      .then(res => {
 
-deleteTodo = (title, note) =>{
+        window.location = '/todos/'
+      })
+    this.setState({ title: "", note: "" });
+  };
 
-console.log("todo delete clicked")
+  deleteTodo = (title, note) => {
 
-let deletedTodo ={
-  title: title,
-  note: note
-}
-console.log(deletedTodo)
-API.deleteUserTodo(userId, deletedTodo)
-.then (res=>{
-  console.log("deleted todo")
-   window.location= '/todos/'
-},)
-this.setState({ title: "", note: ""});
-}
+    let deletedTodo = {
+      title: title,
+      note: note
+    }
+
+    API.deleteUserTodo(userId, deletedTodo)
+      .then(res => {
+
+        window.location = '/todos/'
+      })
+    this.setState({ title: "", note: "" });
+  }
 
   render() {
     return (
@@ -88,16 +83,16 @@ this.setState({ title: "", note: ""});
                   <div className="todosListShownContainer" key={todo.title}>
                     <p className="todoListEachContainer"
                       name="title"
-                    value={this.state.title}
+                      value={this.state.title}
                     ><strong>Title:     </strong>{todo.title}</p>
                     <p className="todoListEachContainer"
                       name="note"
-                     value={this.state.note}
+                      value={this.state.note}
                     ><strong>Note:     </strong>{todo.note}</p>
-                 
+
                     <button className="todoListContainerDeleteButton"
-                    onClick={() => this.deleteTodo(todo.title,todo.note)}
-               
+                      onClick={() => this.deleteTodo(todo.title, todo.note)}
+
                     >Delete</button>
                   </div>
                 ))}
@@ -111,20 +106,20 @@ this.setState({ title: "", note: ""});
             <div className="newTodoContainer">
               <div className="newTodoDataTitle">Title:</div>
               <input className="newTodoTitleInput" id="newTodoTitleInputId"
-               type="text"
-               placeholder=""
-               name="title"
-               value={this.state.title}
-          onChange={this.handleInputChange}
-               ></input>
+                type="text"
+                placeholder=""
+                name="title"
+                value={this.state.title}
+                onChange={this.handleInputChange}
+              ></input>
               <div className="newTodoDataTitle">Note:</div>
               <textarea className="newTodoNoteInput" id="newTodoNoteTextAreaId"
-              type="text"
+                type="text"
                 placeholder=""
                 name="note"
                 value={this.state.note}
-           onChange={this.handleInputChange}
-                           
+                onChange={this.handleInputChange}
+
               ></textarea>
               <div>
                 <button className="newTodoSubmitButton" onClick={this.handleFormSubmit}>Submit</button>
@@ -132,8 +127,8 @@ this.setState({ title: "", note: ""});
             </div>
           </Grid.Column>
           <footer className="footer">
-    Copyright <i className="far fa-copyright"></i>
-  </footer>
+            Copyright <i className="far fa-copyright"></i>
+          </footer>
         </Grid>
       </>
     )

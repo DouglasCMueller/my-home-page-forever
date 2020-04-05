@@ -7,7 +7,6 @@ import FunFactOfTheDay from "../components/FunFactOfTheDay"
 import GoogleNews from "../components/GoogleNews"
 import StockQuoteShown from "../components/AlphaAdvantageStockQuotes"
 import ReactPlayer from 'react-player'
-import ReactPlayerVideo from '../components/media/media.json'
 import { Grid } from 'semantic-ui-react'
 import API from "../utils/API";
 import "../App.css"

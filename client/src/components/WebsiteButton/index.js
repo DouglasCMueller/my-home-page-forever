@@ -2,8 +2,6 @@ import React from "react";
 
 import "./style.css";
 
-//making website button
-
 function WebsiteButton(props) {
   return (
   <button id = "websiteButtonId" className="websiteButton"

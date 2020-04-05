@@ -2,7 +2,6 @@ import React from 'react'
 import './style.css'
 require('react-datetime');
 
-
 function DateShown (){
     var tempDate = new Date();
     var date = tempDate.getMonth()+1 + '-' + (tempDate.getDate()) + '-' + tempDate.getFullYear();

@@ -34,7 +34,7 @@ export default class DateShown extends React.Component {
 
                 locationcityApi = this.state.locationcity
                 locationstateApi = this.state.locationstate
-                console.log(locationcityApi, locationstateApi)
+    
 let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q="
 + locationcityApi + "," + locationstateApi + "," +
 "us&appid=0e6eab324d282d4253d4d8261f5884b9"
@@ -44,7 +44,7 @@ let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q="
 
                         mainTemperatureKelvin = res.data.main.temp;
                         mainTemperatureFahrenheit = Math.round((mainTemperatureKelvin - 273.15) * 9 / 5 + 32);
-                        console.log(res.data.weather[0].description)
+                  
                         forecast = res.data.weather[0].description
                         this.setState({
                             maintemperature: mainTemperatureFahrenheit,

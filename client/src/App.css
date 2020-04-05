@@ -12,8 +12,6 @@
 .mainContentContainer{
 color: #379683;
 background-color: white;
-
-
 }
 .ui.column.grid>[class*="eight wide"].column,
 .ui.grid>.column.row>[class*="eight wide"].column,

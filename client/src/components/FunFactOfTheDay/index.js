@@ -4,9 +4,7 @@ import './style.css'
 
 export default class FunFactOfTheDay extends React.Component {
     state = {
-
         funfact: ""
-
     };
 
     componentDidMount() {
@@ -17,13 +15,13 @@ export default class FunFactOfTheDay extends React.Component {
         let funFactUrl = 'http://numbersapi.com/random'
         axios.get(funFactUrl)
 
-            .then(res =>{
-console.log(res)
+            .then(res => {
+
                 this.setState({
                     funFact: res.data
 
                 })
-             } )
+            })
     }
 
     render() {
@@ -31,6 +29,7 @@ console.log(res)
             <div className="funFactOfTheDayContainer">
                 {this.state.funFact}
 
-                    </div>
+            </div>
         )
-}}
+    }
+}

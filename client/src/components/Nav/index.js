@@ -35,7 +35,6 @@ export default class MenuExampleSecondaryPointing extends Component {
             />
           </Menu.Menu>
         </Menu>
-
       </div>
     )
   }
