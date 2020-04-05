@@ -15,7 +15,7 @@ export default class GoogleNews extends React.Component {
     }
     loadHeadlines = () => {
 
-        let googleNewsUrl = "http://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=" + apiConfig.googleNewsApiKey
+        let googleNewsUrl = "http://newsapi.org/v2/top-headlines?country=us&pageSize=10&" + apiConfig.googleNewsApiKey
         axios.get(googleNewsUrl)
 
             .then(res =>
