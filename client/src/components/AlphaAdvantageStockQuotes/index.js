@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css'
 import axios from 'axios';
+import apiConfig from '../../apiKeys';
 
 export default class StockQuoteShown extends React.Component {
 
@@ -34,7 +35,7 @@ export default class StockQuoteShown extends React.Component {
         "headers": {
           "content-type": "application/octet-stream",
           "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
-          "x-rapidapi-key": "58493bb433mshd3877b6f9e16f1ep12332ajsn963b290af47d"
+          "x-rapidapi-key": apiConfig.rapidApiAlphaAdvantageKey
         }, "params": {
           "symbol": userStockSymbol,
           "function": "GLOBAL_QUOTE"

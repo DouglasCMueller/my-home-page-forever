@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import API from "../../utils/API";
+import apiConfig from '../../apiKeys';
 import './style.css'
 
 let userId = window.localStorage.getItem("id")
@@ -37,7 +38,7 @@ export default class DateShown extends React.Component {
     
 let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q="
 + locationcityApi + "," + locationstateApi + "," +
-"us&appid=0e6eab324d282d4253d4d8261f5884b9"
+apiConfig.googleWeatherApiKey
                 axios.get(weatherUrl)
 
                     .then(res => {
