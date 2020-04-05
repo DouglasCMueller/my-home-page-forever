@@ -12,7 +12,7 @@ export default class FunFactOfTheDay extends React.Component {
     }
     loadFunFactOfTheDay = () => {
 
-        let funFactUrl = 'http://numbersapi.com/random'
+        let funFactUrl = 'https://numbersapi.com/random'
         axios.get(funFactUrl)
 
             .then(res => {
