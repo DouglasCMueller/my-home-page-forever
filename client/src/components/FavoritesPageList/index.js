@@ -14,7 +14,7 @@ class FavoritesPageList extends Component {
 
         const socialMediaSites = this.state.socialMediaSites;
         const clickedMatch = socialMediaSites.filter(socialMediaSite => socialMediaSite.id === id)
-
+console.log(clickedMatch)
         for (let i = 0; i < socialMediaSites.length; i++) {
             socialMediaSites[i].clicked = false;
         }
