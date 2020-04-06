@@ -3,7 +3,7 @@ import Header from "../components/Header/index"
 import DateShown from "../components/DateShown"
 import Timer from "../components/Timer"
 import WeatherShown from "../components/Weather"
-import FunFactOfTheDay from "../components/FunFactOfTheDay"
+// import FunFactOfTheDay from "../components/FunFactOfTheDay"
 import GoogleNews from "../components/GoogleNews"
 import StockQuoteShown from "../components/AlphaAdvantageStockQuotes"
 import ReactPlayer from 'react-player'
