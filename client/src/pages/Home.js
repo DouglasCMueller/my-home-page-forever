@@ -79,12 +79,12 @@ class Home extends Component {
        <StockQuoteShown />
    
             </div>
-
+{/* 
             <div className="funFactOfTheDayContainer">
               <div className="funFactOfTheDayTitle">Random Number Fact:</div>
 
 <FunFactOfTheDay />
-</div>
+</div> */}
             <div className="reactPlayerContainer">
             <ReactPlayer 
             width="350px"
