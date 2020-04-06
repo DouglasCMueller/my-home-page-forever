@@ -27,6 +27,10 @@ padding: 0;
  
     background-color: white;
 }
+.todoPageIndividualTodosContainer{
+    height: 470px;
+    overflow-y:auto;
+}
 .addTodoButton{
 margin-right: 300px;
     float: right;

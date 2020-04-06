@@ -27,6 +27,10 @@ padding: 0;
  
     background-color: white;
 }
+.eventPageIndividualEventsContainer{
+    height: 450px;
+    overflow-y:auto;
+}
 .addEventButton{
 margin-right: 300px;
     float: right;
