@@ -86,12 +86,12 @@ class Home extends Component {
 <FunFactOfTheDay />
 </div> */}
             <div className="reactPlayerContainer">
-            <ReactPlayer 
+            {/* <ReactPlayer 
             width="350px"
             height="200px"
             url="https://www.youtube.com/watch?v=jWZ23VZ3Wcg"
             playing={true}
-            loop={true} />
+            loop={false} /> */}
             </div>
            
           </Grid.Column>

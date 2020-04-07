@@ -10,7 +10,7 @@
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client" 
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
@@ -27,14 +27,7 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
-    "mongoose-date-format": "^1.2.0",
-    "react": "^16.13.1",
-    "react-datetime": "^2.16.3",
-    "react-dropdown-input": "^0.1.11",
-    "react-modal": "^3.11.2",
-    "react-player": "^1.15.3",
-    "semantic-ui-react": "^0.88.2",
-    "unirest": "^0.6.0"
+    "mongoose-date-format": "^1.2.0"
   },
   "description": ""
 }
